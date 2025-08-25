@@ -9,21 +9,12 @@ const DEVILightningConfig = {
   maxRadius: 35,
   minRadius: 15,
   interactionRadius: 120,
-  lightning: {
-    color: '#1F3FCF',
-    highlight: 'rgba(31,63,207,0.8)',
-    glowColor: 'rgba(31,63,207,0.4)',
-    pulseFrequency: 2000, // ms between pulses
-    pulseDuration: 800,   // ms pulse lasts
-    thickness: [2, 4],
-    maxConcurrent: { desktop: 3, mobile: 2 },
-  },
   colors: { 
     oil: {
-      primary: '#6F63E7',
-      secondary: '#5749c4', 
-      light: '#9189ef',
-      dark: '#4a3d9a'
+      primary: '#00a6ff',      // Electric blue like the face patterns
+      secondary: '#0088ff',    // Outline color - slightly darker
+      light: '#4bc4ff',        // Bright glow center - intense neon
+      dark: '#0066cc'          // Darker shade for depth
     },
     water: {
       primary: '#1a1a2e',
@@ -134,9 +125,7 @@ class DEVILightningBlobs {
         radius: radius,
         originalRadius: radius,
         type: isOil ? 'oil' : 'water',
-        age: 0,
-        lightningCharge: 0, // For lightning pulsing
-        lastLightningTime: 0
+        age: 0
       };
       this.blobs.push(blob);
     }
@@ -159,94 +148,7 @@ class DEVILightningBlobs {
     observer.observe(this.canvas);
   }
 
-  triggerLightningPulse(blob1, blob2) {
-    // Charge both blobs with lightning
-    blob1.lightningCharge = 1.0;
-    blob2.lightningCharge = 1.0;
-    blob1.lastLightningTime = this.time;
-    blob2.lastLightningTime = this.time;
-    
-    // Create lightning arc between blobs
-    const lightning = {
-      startX: blob1.x,
-      startY: blob1.y,
-      endX: blob2.x,
-      endY: blob2.y,
-      startTime: this.time,
-      duration: DEVILightningConfig.lightning.pulseDuration,
-      intensity: 1.0
-    };
-    
-    if (!this.lightningArcs) this.lightningArcs = [];
-    this.lightningArcs.push(lightning);
-  }
 
-  scheduleNextLightning() {
-    // Random lightning pulses
-    if (Math.random() < 0.01 && this.blobs.length > 1) {
-      const blob1 = this.blobs[Math.floor(Math.random() * this.blobs.length)];
-      const blob2 = this.blobs[Math.floor(Math.random() * this.blobs.length)];
-      if (blob1 !== blob2) {
-        this.triggerLightningPulse(blob1, blob2);
-      }
-    }
-  }
-
-  createLightning() {
-    const maxConcurrent = this.isMobile ? 
-      DEVILightningConfig.lightning.maxConcurrent.mobile : 
-      DEVILightningConfig.lightning.maxConcurrent.desktop;
-    
-    if (this.lightningArcs.length >= maxConcurrent) return;
-    
-    // Pick two random blobs
-    const blob1 = this.blobs[Math.floor(Math.random() * this.blobs.length)];
-    const blob2 = this.blobs[Math.floor(Math.random() * this.blobs.length)];
-    
-    if (blob1 === blob2) return;
-    
-    const duration = this.randomBetween(...DEVILightningConfig.lightning.durationMs);
-    const afterglow = this.randomBetween(...DEVILightningConfig.lightning.afterglowMs);
-    
-    const lightning = {
-      startX: blob1.x,
-      startY: blob1.y,
-      endX: blob2.x,
-      endY: blob2.y,
-      path: this.generateLightningPath(blob1.x, blob1.y, blob2.x, blob2.y),
-      startTime: this.time,
-      duration: duration,
-      afterglowDuration: afterglow,
-      thickness: this.randomBetween(...DEVILightningConfig.lightning.thickness),
-      opacity: 0
-    };
-    
-    this.lightningArcs.push(lightning);
-    this.scheduleNextLightning();
-  }
-
-  generateLightningPath(x1, y1, x2, y2) {
-    const points = [{ x: x1, y: y1 }];
-    const segments = Math.floor(Math.random() * 4) + 3; // 3-6 segments
-    
-    for (let i = 1; i < segments; i++) {
-      const t = i / segments;
-      const baseX = x1 + (x2 - x1) * t;
-      const baseY = y1 + (y2 - y1) * t;
-      
-      // Add jagged displacement
-      const displacement = 20 * (1 - Math.abs(t - 0.5) * 2); // Max displacement at middle
-      const angle = Math.random() * Math.PI * 2;
-      
-      points.push({
-        x: baseX + Math.cos(angle) * displacement * Math.random(),
-        y: baseY + Math.sin(angle) * displacement * Math.random()
-      });
-    }
-    
-    points.push({ x: x2, y: y2 });
-    return points;
-  }
 
   // Simplified noise function
   noise(x, y) {
@@ -297,10 +199,7 @@ class DEVILightningBlobs {
             other.vx += impulseX;
             other.vy += impulseY;
             
-            // Trigger lightning on collision
-            if (Math.random() < 0.3) {
-              this.triggerLightningPulse(blob, other);
-            }
+
           }
         }
       }
@@ -335,11 +234,7 @@ class DEVILightningBlobs {
       const pressureFactor = 1 + Math.sin(blob.age * 0.5) * 0.02;
       blob.radius = blob.originalRadius * pressureFactor;
       
-      // Update lightning charge decay
-      if (blob.lightningCharge > 0) {
-        blob.lightningCharge -= deltaTime * 0.002;
-        blob.lightningCharge = Math.max(0, blob.lightningCharge);
-      }
+
     });
   }
 
@@ -379,17 +274,14 @@ class DEVILightningBlobs {
       this.width * 0.5, this.height * 0.3, 0,
       this.width * 0.5, this.height * 0.3, this.width * 0.8
     );
-    ambientGradient.addColorStop(0, 'rgba(31, 63, 207, 0.08)');
+    ambientGradient.addColorStop(0, 'rgba(75, 196, 255, 0.12)'); // #4bc4ff with opacity - brighter glow
     ambientGradient.addColorStop(1, 'rgba(0, 0, 0, 0.1)');
     
     this.ctx.fillStyle = ambientGradient;
     this.ctx.fillRect(0, 0, this.width, this.height);
     
-    // Render blobs with lightning effects
+    // Render blobs (hero-style, no lightning)
     this.renderBlobs();
-    
-    // Render lightning arcs
-    this.renderLightning();
   }
 
   renderBlobs() {
@@ -421,31 +313,7 @@ class DEVILightningBlobs {
       this.ctx.arc(blob.x, blob.y, blob.radius, 0, Math.PI * 2);
       this.ctx.fill();
       
-      // Add lightning effect if charged
-      if (blob.lightningCharge > 0) {
-        const pulseIntensity = Math.sin(this.time * 0.01) * 0.5 + 0.5;
-        const lightningAlpha = blob.lightningCharge * pulseIntensity;
-        
-        // Lightning glow
-        this.ctx.save();
-        this.ctx.globalAlpha = lightningAlpha * 0.6;
-        this.ctx.shadowColor = DEVILightningConfig.lightning.color;
-        this.ctx.shadowBlur = 20;
-        this.ctx.fillStyle = DEVILightningConfig.lightning.highlight;
-        this.ctx.beginPath();
-        this.ctx.arc(blob.x, blob.y, blob.radius * 1.2, 0, Math.PI * 2);
-        this.ctx.fill();
-        this.ctx.restore();
-        
-        // Lightning pulse through blob
-        this.ctx.save();
-        this.ctx.globalAlpha = lightningAlpha * 0.8;
-        this.ctx.fillStyle = DEVILightningConfig.lightning.color;
-        this.ctx.beginPath();
-        this.ctx.arc(blob.x, blob.y, blob.radius * 0.6, 0, Math.PI * 2);
-        this.ctx.fill();
-        this.ctx.restore();
-      }
+
       
       // Add subtle outline (like hero)
       this.ctx.strokeStyle = blob.type === 'oil' ? 
@@ -458,53 +326,7 @@ class DEVILightningBlobs {
     });
   }
 
-  renderLightning() {
-    if (!this.lightningArcs) return;
-    
-    this.lightningArcs.forEach(lightning => {
-      const elapsed = this.time - lightning.startTime;
-      if (elapsed > lightning.duration) return;
-      
-      const progress = elapsed / lightning.duration;
-      const intensity = Math.sin(progress * Math.PI) * lightning.intensity;
-      
-      this.ctx.save();
-      this.ctx.globalCompositeOperation = 'lighter';
-      this.ctx.globalAlpha = intensity;
-      
-      // Draw lightning bolt between blobs
-      this.ctx.strokeStyle = DEVILightningConfig.lightning.color;
-      this.ctx.lineWidth = 3;
-      this.ctx.lineCap = 'round';
-      this.ctx.shadowColor = DEVILightningConfig.lightning.color;
-      this.ctx.shadowBlur = 15;
-      
-      this.ctx.beginPath();
-      this.ctx.moveTo(lightning.startX, lightning.startY);
-      
-      // Add some jaggedness to the lightning
-      const midX = (lightning.startX + lightning.endX) / 2 + (Math.sin(this.time * 0.1) * 10);
-      const midY = (lightning.startY + lightning.endY) / 2 + (Math.cos(this.time * 0.1) * 10);
-      
-      this.ctx.lineTo(midX, midY);
-      this.ctx.lineTo(lightning.endX, lightning.endY);
-      this.ctx.stroke();
-      
-      // Draw brighter core
-      this.ctx.globalAlpha = intensity * 0.8;
-      this.ctx.strokeStyle = DEVILightningConfig.lightning.highlight;
-      this.ctx.lineWidth = 1.5;
-      this.ctx.shadowBlur = 8;
-      this.ctx.stroke();
-      
-      this.ctx.restore();
-    });
-    
-    // Clean up expired arcs
-    this.lightningArcs = this.lightningArcs.filter(lightning => 
-      this.time - lightning.startTime <= lightning.duration
-    );
-  }
+
 
   renderStaticFrame() {
     this.setupCanvas();
@@ -519,7 +341,7 @@ class DEVILightningBlobs {
       this.width * 0.5, this.height * 0.3, 0,
       this.width * 0.5, this.height * 0.3, this.width * 0.8
     );
-    ambientGradient.addColorStop(0, 'rgba(31, 63, 207, 0.08)');
+    ambientGradient.addColorStop(0, 'rgba(75, 196, 255, 0.12)'); // #4bc4ff with opacity - brighter glow
     ambientGradient.addColorStop(1, 'rgba(0, 0, 0, 0.1)');
     
     this.ctx.fillStyle = ambientGradient;
@@ -542,7 +364,6 @@ class DEVILightningBlobs {
     
     // Update animations
     this.updateBlobs(deltaTime);
-    this.scheduleNextLightning(); // Check for random lightning
     
     // Render frame
     this.render();
