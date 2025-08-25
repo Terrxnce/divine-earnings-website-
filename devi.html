@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D.E.V.I | Divine Earnings Virtual Intelligence - Coming Soon</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./assets/css/components/devi_banner.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <meta name="description" content="D.E.V.I - Divine Earnings Virtual Intelligence. An AI-assisted, structure-first trading engine built for discipline, clarity, and proof. Coming Soon.">
+    
+    <style>
+        /* D.E.V.I Page Specific Styles */
+        .devi-hero {
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .devi-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(111, 99, 231, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 20%, rgba(111, 99, 231, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        /* D.E.V.I Visual Element */
+        .devi-visual {
+            position: absolute;
+            right: 10%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 200px;
+            height: 200px;
+            opacity: 0.1;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .devi-visual::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(111, 99, 231, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: pulse 3s ease-in-out infinite;
+        }
+        
+        .devi-visual::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #6F63E7, #8B7CF6);
+            border-radius: 50%;
+            box-shadow: 0 0 30px rgba(111, 99, 231, 0.5);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.1); opacity: 0.5; }
+        }
+        
+        @keyframes glow {
+            0% { box-shadow: 0 0 30px rgba(111, 99, 231, 0.5); }
+            100% { box-shadow: 0 0 50px rgba(111, 99, 231, 0.8); }
+        }
+        
+        .devi-hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .devi-title {
+            font-size: 4rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 30px rgba(111, 99, 231, 0.3);
+            position: relative;
+        }
+        
+        .devi-title::before {
+            content: 'D.E.V.I';
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #6F63E7;
+            animation: glitch 3s infinite;
+            clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+        }
+        
+        .devi-title::after {
+            content: 'D.E.V.I';
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #8B7CF6;
+            animation: glitch 3s infinite reverse;
+            clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+        }
+        
+        @keyframes glitch {
+            0%, 100% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+        }
+        
+        .devi-subtitle {
+            font-size: 1.5rem;
+            color: #6F63E7;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+        
+        .devi-description {
+            font-size: 1.2rem;
+            color: #ffffff;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+        
+        .devi-intrigue {
+            font-size: 1rem;
+            color: #6F63E7;
+            margin-bottom: 1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .devi-coming-soon {
+            font-size: 1.8rem;
+            color: #6F63E7;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-shadow: 0 0 20px rgba(111, 99, 231, 0.3);
+        }
+        
+        .devi-cta-microcopy {
+            font-size: 0.9rem;
+            color: #cccccc;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+        
+        .devi-cta {
+            display: inline-block;
+            background: linear-gradient(135deg, #6F63E7 0%, #8B7CF6 100%);
+            color: white;
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(111, 99, 231, 0.3);
+        }
+        
+        .devi-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(111, 99, 231, 0.4);
+        }
+        
+        .devi-section {
+            padding: 5rem 0;
+            background: #000000;
+        }
+        
+        .devi-section:nth-child(even) {
+            background: #0a0a0a;
+        }
+        
+        .devi-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .devi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .devi-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .devi-card:hover {
+            border-color: #6F63E7;
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(111, 99, 231, 0.1);
+        }
+        
+        .devi-card h3 {
+            color: #6F63E7;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .devi-card p {
+            color: #cccccc;
+            line-height: 1.6;
+        }
+        
+        .devi-feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        
+        .devi-feature-list li {
+            color: #cccccc;
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .devi-feature-list li::before {
+            content: '→';
+            color: #6F63E7;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .waitlist-form {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 3rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .form-field {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-field label {
+            display: block;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-field input,
+        .form-field textarea {
+            width: 100%;
+            padding: 1rem;
+            background: #000000;
+            border: 1px solid #333;
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-field input:focus,
+        .form-field textarea:focus {
+            outline: none;
+            border-color: #6F63E7;
+        }
+        
+        .form-field input[type="email"] {
+            background: #000000;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #6F63E7 0%, #8B7CF6 100%);
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(111, 99, 231, 0.3);
+        }
+        
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        .form-status {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .form-status.success {
+            background: rgba(34, 197, 94, 0.1);
+            color: #22c55e;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+        
+        .form-status.error {
+            background: rgba(239, 68, 68, 0.1);
+            color: #ef4444;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+        
+        .privacy-note {
+            font-size: 0.8rem;
+            color: #888;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .roadmap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 3rem 0;
+            position: relative;
+        }
+        
+        .roadmap::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #6F63E7, #8B7CF6);
+            z-index: 1;
+        }
+        
+        .roadmap-step {
+            background: #000000;
+            border: 2px solid #6F63E7;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6F63E7;
+            font-weight: bold;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .roadmap-step.active {
+            background: #6F63E7;
+            color: white;
+        }
+        
+        .roadmap-label {
+            position: absolute;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #cccccc;
+            font-size: 0.9rem;
+            text-align: center;
+            white-space: nowrap;
+        }
+        
+        @media (max-width: 768px) {
+            .devi-title {
+                font-size: 2.5rem;
+            }
+            
+            .devi-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .devi-visual {
+                display: none;
+            }
+            
+            .roadmap {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .roadmap::before {
+                display: none;
+            }
+            
+            .roadmap-step {
+                position: relative;
+            }
+            
+            .roadmap-label {
+                position: relative;
+                top: 10px;
+                left: auto;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Fixed Navigation -->
+    <header id="top-header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="images/Logo.png" alt="Divine Earnings Logo">
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="main-navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="memberships.html">Memberships</a></li>
+                    <li><a href="devi.html" class="active">D.E.V.I</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li class="nav-item nav-devi">
+                        <a href="https://devi.ai" target="_blank" rel="noopener noreferrer" class="btn-devi-nav" aria-label="Open D.E.V.I in a new tab">
+                            D.E.V.I
+                        </a>
+                    </li>
+                    <li><a href="https://billing.stripe.com/p/login/dR65lDf1Dgqu4y4bII" class="nav-button">Client Portal</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- D.E.V.I Hero Section -->
+    <section class="devi-hero">
+        <div class="devi-visual"></div>
+        <div class="devi-hero-content">
+            <p class="devi-intrigue">The future of trading is almost here</p>
+            <h1 class="devi-title">D.E.V.I</h1>
+            <p class="devi-subtitle">Divine Earnings Virtual Intelligence</p>
+            <p class="devi-description">
+                Structure first. AI-governed.<br>
+                D.E.V.I is a rules-first engine that trades like a professional: session aware, risk-disciplined, and fully transparent.
+            </p>
+            <p class="devi-coming-soon">Coming Soon.</p>
+            <p class="devi-cta-microcopy">Get early access + priority beta invites</p>
+            <a href="#waitlist" class="devi-cta">Join the Waitlist</a>
+        </div>
+    </section>
+
+    <!-- What is D.E.V.I Section -->
+    <section class="devi-section">
+        <div class="devi-container">
+            <h2 style="text-align: center; color: #ffffff; font-size: 2.5rem; margin-bottom: 1rem;">What is D.E.V.I</h2>
+            <p style="text-align: center; color: #cccccc; font-size: 1.2rem; max-width: 800px; margin: 0 auto 3rem; line-height: 1.6;">
+                D.E.V.I (Divine Earnings Virtual Intelligence) blends institutional price-action structure with an AI governor. 
+                Technicals lead decisions; AI enforces context and risk. The result is fewer impulsive trades, clear system behavior, 
+                and transparent logs you can audit.
+            </p>
+            
+            <div class="devi-grid">
+                <div class="devi-card">
+                    <h3><i class="fas fa-brain"></i> Structure Engine</h3>
+                    <ul class="devi-feature-list">
+                        <li>OB/FVG analysis</li>
+                        <li>BOS/CHoCH detection</li>
+                        <li>EMA trend alignment (21/50/200)</li>
+                        <li>Sweeps and engulfings</li>
+                        <li>Rejection patterns</li>
+                    </ul>
+                </div>
+                
+                <div class="devi-card">
+                    <h3><i class="fas fa-robot"></i> AI Governor</h3>
+                    <ul class="devi-feature-list">
+                        <li>LLaMA 3 validation</li>
+                        <li>Macro/sentiment context</li>
+                        <li>Weak setup filtering</li>
+                        <li>Risk enforcement</li>
+                        <li>Decision transparency</li>
+                    </ul>
+                </div>
+                
+                <div class="devi-card">
+                    <h3><i class="fas fa-shield-alt"></i> Risk Management</h3>
+                    <ul class="devi-feature-list">
+                        <li>ATR-based SL/TP</li>
+                        <li>Structure-aware placement</li>
+                        <li>Session windows</li>
+                        <li>Hourly trade limits</li>
+                        <li>Equity profit protection</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section class="devi-section">
+        <div class="devi-container">
+            <h2 style="text-align: center; color: #ffffff; font-size: 2.5rem; margin-bottom: 3rem;">Development Roadmap</h2>
+            
+            <div class="roadmap">
+                <div class="roadmap-step active">
+                    <i class="fas fa-check"></i>
+                    <div class="roadmap-label">Private Testing</div>
+                </div>
+                <div class="roadmap-step">
+                    <span>2</span>
+                    <div class="roadmap-label">Beta Access</div>
+                </div>
+                <div class="roadmap-step">
+                    <span>3</span>
+                    <div class="roadmap-label">Early Access</div>
+                </div>
+                <div class="roadmap-step">
+                    <span>4</span>
+                    <div class="roadmap-label">Full Release</div>
+                </div>
+            </div>
+            
+            <p style="text-align: center; color: #cccccc; font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
+                Currently in private live testing on prop-style accounts. Beta access will be invite-only for existing community members and waitlist subscribers.
+            </p>
+        </div>
+    </section>
+
+    <!-- Who It's For Section -->
+    <section class="devi-section">
+        <div class="devi-container">
+            <h2 style="text-align: center; color: #ffffff; font-size: 2.5rem; margin-bottom: 1rem;">Who It's For</h2>
+            <p style="text-align: center; color: #cccccc; font-size: 1.2rem; max-width: 800px; margin: 0 auto 3rem; line-height: 1.6;">
+                Prop-firm traders and serious retail traders who want a disciplined, auditable, session-aware system.
+            </p>
+            
+            <div class="devi-grid">
+                <div class="devi-card">
+                    <h3><i class="fas fa-chart-line"></i> Prop Firm Traders</h3>
+                    <p>Built to meet strict prop firm requirements with transparent audit trails and disciplined risk management.</p>
+                </div>
+                
+                <div class="devi-card">
+                    <h3><i class="fas fa-user-graduate"></i> Serious Retail Traders</h3>
+                    <p>For traders who want institutional-grade tools with clear rules, session awareness, and full transparency.</p>
+                </div>
+                
+                <div class="devi-card">
+                    <h3><i class="fas fa-eye"></i> Transparency Seekers</h3>
+                    <p>Every decision is logged and auditable. No black box - you see exactly why trades are taken or rejected.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Waitlist Section -->
+    <section id="waitlist" class="devi-section">
+        <div class="devi-container">
+            <h2 style="text-align: center; color: #ffffff; font-size: 2.5rem; margin-bottom: 1rem;">Join the Waitlist</h2>
+            <p style="text-align: center; color: #cccccc; font-size: 1.2rem; max-width: 600px; margin: 0 auto 3rem; line-height: 1.6;">
+                Get priority Beta access, Early-Access pricing, and behind-the-scenes updates.
+            </p>
+            
+            <form id="waitlist-form" class="waitlist-form" onsubmit="return submitWaitlist(event)">
+                <div class="form-field">
+                    <label for="name">Name</label>
+                    <input id="name" name="name" type="text" autocomplete="name" />
+                </div>
+
+                <div class="form-field">
+                    <label for="email">Email *</label>
+                    <input id="email" name="email" type="email" required autocomplete="email" />
+                </div>
+
+                <div class="form-field">
+                    <label for="notes">Notes (optional)</label>
+                    <textarea id="notes" name="notes" rows="3" placeholder="Tell us what you trade…"></textarea>
+                </div>
+
+                <input type="hidden" id="source" name="source" value="website" />
+
+                <button id="submitBtn" type="submit" class="submit-btn">Join the Waitlist</button>
+                <div id="status" class="form-status" aria-live="polite" style="display: none;"></div>
+            </form>
+            
+            <p class="privacy-note">
+                We use your email to send D.E.V.I updates, invites, and early access offers. You can unsubscribe anytime.
+            </p>
+        </div>
+    </section>
+
+    <!-- D.E.V.I CTA Strip -->
+    <section class="devi-cta-strip reveal" aria-label="D.E.V.I promo">
+        <canvas id="devi-lightning-bg" aria-hidden="true"></canvas>
+        <div class="strip-inner">
+            <p><strong>D.E.V.I</strong> powers our smartest signals.</p>
+            <a href="https://devi.ai" target="_blank" rel="noopener noreferrer" class="btn-devi-cta btn-devi-cta--small">
+                Explore D.E.V.I.ai
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>Divine Earnings</h3>
+                    <p>Empowering traders to achieve financial independence through education and community.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="memberships.html">Memberships</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="disclaimer.html">Risk Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Divine Earnings. All Rights Reserved.</p>
+                <p style="font-size: 0.8rem; color: #888; margin-top: 0.5rem;">
+                    D.E.V.I is for educational purposes and research testing. Trading involves risk. Past performance is not indicative of future results.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Scripts -->
+    <script src="scripts.js"></script>
+    <script src="assets/js/animations/devi_lightning_blobs.js"></script>
+    
+    <script>
+        async function submitWaitlist(e) {
+            e.preventDefault();
+            const status = document.getElementById('status');
+            const btn = document.getElementById('submitBtn');
+            
+            status.style.display = 'block';
+            status.textContent = 'Submitting…';
+            status.className = 'form-status';
+            btn.disabled = true;
+
+            const payload = {
+                name: document.getElementById('name').value || '',
+                email: document.getElementById('email').value || '',
+                notes: document.getElementById('notes').value || '',
+                source: document.getElementById('source').value || 'website'
+            };
+
+            try {
+                const res = await fetch('YOUR_APPS_SCRIPT_WEB_APP_URL_HERE', {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                status.textContent = 'Thanks — you\'re on the list. Check your email soon.';
+                status.className = 'form-status success';
+                e.target.reset();
+            } catch (err) {
+                status.textContent = 'Error — please try again or email us.';
+                status.className = 'form-status error';
+                console.error(err);
+            } finally {
+                btn.disabled = false;
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>
