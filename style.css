@@ -12,6 +12,9 @@
     --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
     --section-padding: 4rem 0;
+    --nav-h: 72px; /* actual navbar height on desktop */
+    --nav-hero-gap: 6px; /* old look used ~6–8px incl. divider */
+    --first-section-top: 20px; /* tight hero → content spacing */
 }
 
 * {
@@ -24,15 +27,18 @@ html {
     scroll-behavior: smooth;
     overflow-y: auto;
     font-size: 16px;
+    height: 100%;
 }
 
 body {
     font-family: 'Avenir Next World', 'Segoe UI', Roboto, sans-serif;
     color: var(--text-color);
     line-height: 1.6;
-    background-color: #f9f9ff;
+    background-color: #f9f9ff; /* Light background like the old version */
     overflow-x: hidden;
+    overflow-y: auto;
     position: relative;
+    height: 100%;
 }
 
 /* Modern Animated Background */
@@ -108,6 +114,24 @@ section {
         inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
+/* First content section spacing adjustment after hero strips */
+main > section:first-child,
+.hero-style + section {
+    margin-top: 0 !important; /* kill external gap */
+    padding-top: var(--first-section-top) !important; /* ~20px */
+}
+
+/* Memberships page specific adjustment */
+#detailed-memberships {
+    margin-top: 0 !important; /* kill external gap */
+    padding-top: var(--first-section-top) !important; /* ~20px */
+}
+
+/* D.E.V.I page hero text alignment adjustment */
+.devi-content-left {
+    padding-top: calc(32px - 12px); /* Reduce top padding by 12px for eye-line alignment */
+}
+
 section:nth-child(even) {
     background: rgba(245, 245, 255, 0.95);
 }
@@ -120,11 +144,14 @@ section:nth-child(even) {
     justify-content: center;
     text-align: center;
     color: var(--light-text);
-    padding: 6rem 1.5rem;
-    margin-top: 0;
+    padding: 0 1.5rem 6rem;
+    margin-top: var(--nav-hero-gap) !important; /* 6px gap */
+    padding-top: 0 !important; /* Prevent padding from inflating the gap */
+    border-top: 0 !important; /* Avoid phantom lines */
     position: relative;
     border-radius: 0;
     overflow: hidden;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
 }
 
 /* Hero-style sections for other pages */
@@ -135,11 +162,14 @@ section:nth-child(even) {
     justify-content: center;
     text-align: center;
     color: var(--light-text);
-    padding: 4rem 1.5rem 2rem;
-    margin-top: 0;
+    padding: 0 1.5rem 2rem;
+    margin-top: var(--nav-hero-gap) !important; /* 6px gap */
+    padding-top: 0 !important; /* Prevent padding from inflating the gap */
+    border-top: 0 !important; /* Avoid phantom lines */
     position: relative;
     border-radius: 0;
     overflow: hidden;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
 }
 
 .hero-style h1 {
@@ -226,13 +256,7 @@ section:nth-child(even) {
     background: rgba(255, 255, 255, 0.98);
 }
 
-/* Enhanced Header Background */
-#top-header {
-    background: rgba(0, 0, 0, 0.95);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-}
+/* Enhanced Header Background - Removed purple divider line */
 
 /* Mobile Optimizations for Background */
 @media (max-width: 768px) {
@@ -280,12 +304,21 @@ section:nth-child(even) {
     
     #main-navigation ul {
         flex-direction: column;
-        gap: 2rem;
+        gap: 1rem;
+        width: 100%;
+        padding: 2rem;
     }
     
     #main-navigation a {
-        font-size: 1.5rem;
-        padding: 1rem 2rem;
+        font-size: 1.25rem;
+        padding: 16px 24px;
+        width: 100%;
+        text-align: center;
+        border-radius: 8px;
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
     .mobile-menu-toggle {
@@ -303,6 +336,19 @@ section:nth-child(even) {
     .mobile-menu-toggle.active span:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -6px);
     }
+    
+    /* Mobile logo adjustment */
+    .logo img {
+        height: 40px;
+    }
+}
+
+
+
+@media (max-width: 640px) {
+    :root {
+        --nav-h: 56px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -315,6 +361,11 @@ section:nth-child(even) {
     body::after {
         background-size: 40px 40px, 60px 60px, 80px 80px;
         animation: floatPattern 15s linear infinite;
+    }
+    
+    /* Small mobile logo adjustment */
+    .logo img {
+        height: 36px;
     }
 }
 
@@ -331,6 +382,24 @@ section:nth-child(even) {
     .testimonial-content:hover {
         transform: none;
     }
+}
+
+/* Scroll offset for anchor links with sticky navbar + gap */
+[id] {
+    scroll-margin-top: calc(var(--nav-h) + var(--nav-hero-gap)); /* navbar height + 6px gap */
+}
+
+/* Remove any conflicting spacing from parent wrappers */
+.page, .content, .main {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+/* Remove any hero ::before pseudo-elements used as spacers */
+#hero::before,
+.hero-style::before,
+.devi-hero-v2::before {
+    content: none !important;
 }
 
 /* Back to Top Button */
@@ -351,7 +420,7 @@ section:nth-child(even) {
     visibility: hidden;
     transform: translateY(20px);
     transition: all 0.3s ease;
-    z-index: 1000;
+    z-index: 999;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
@@ -549,16 +618,17 @@ main {
 
 /* Header & Navigation */
 #top-header {
-    background-color: var(--secondary-color);
+    background-color: #000000;
     color: var(--light-text);
-    position: fixed;
+    position: sticky;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 1000;
-    padding: 0.75rem 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.25rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
     transition: var(--transition);
+    border-bottom: 1px solid rgba(255,255,255,0.08); /* 1px hairline */
 }
 
 .header-container {
@@ -576,7 +646,7 @@ main {
 }
 
 .logo img {
-    height: 60px;
+    height: 46px;
     max-width: 200px;
     object-fit: contain;
 }
@@ -592,37 +662,59 @@ main {
     color: var(--light-text);
     text-decoration: none;
     font-weight: 500;
-    padding: 0.5rem;
+    padding: 16px 20px;
     transition: var(--transition);
     position: relative;
+    border-radius: 4px;
 }
 
 #main-navigation a::after {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 0;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
     width: 0;
-    height: 2px;
+    height: 3px;
     background-color: var(--primary-color);
+    border-radius: 2px;
     transition: var(--transition);
 }
 
-#main-navigation a:hover::after,
+#main-navigation a:hover {
+    background-color: rgba(111, 99, 231, 0.1);
+}
+
+#main-navigation a:hover::after {
+    width: 18px;
+}
+
 #main-navigation a.active::after {
-    width: 100%;
+    width: 18px;
+}
+
+#main-navigation a:focus {
+    outline: 2px solid #6F63E7;
+    outline-offset: 2px;
 }
 
 .nav-button {
     background-color: var(--primary-color);
-    padding: 0.5rem 1rem !important;
+    padding: 16px 24px !important;
     border-radius: var(--border-radius);
     transition: var(--transition);
+    font-weight: 600;
 }
 
 .nav-button:hover {
     background-color: var(--primary-dark);
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(111, 99, 231, 0.3);
+}
+
+.nav-button:focus {
+    outline: 2px solid #6F63E7;
+    outline-offset: 2px;
 }
 
 .mobile-menu-toggle {
@@ -634,6 +726,25 @@ main {
     height: 24px;
     position: relative;
     z-index: 1001;
+}
+
+/* Mobile breakpoint for navigation */
+@media (max-width: 1024px) {
+    :root {
+        --nav-h: 64px;
+    }
+    
+    #main-navigation {
+        display: none;
+    }
+    
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    #main-navigation.active {
+        display: flex;
+    }
 }
 
 .mobile-menu-toggle span {
@@ -1643,7 +1754,10 @@ main {
     /* Mobile adjustments for hero-style sections */
     .hero-style {
         min-height: 20vh;
-        padding: 3rem 1rem 2rem;
+        padding: 0 1rem 2rem;
+        margin-top: var(--nav-hero-gap) !important; /* 6px gap */
+        padding-top: 0 !important; /* Prevent padding from inflating the gap */
+        border-top: 0 !important; /* Avoid phantom lines */
     }
     
     .hero-style h1 {
@@ -1652,6 +1766,13 @@ main {
     
     .hero-style .section-intro {
         font-size: 1.1rem;
+    }
+    
+    /* Mobile adjustments for main hero */
+    #hero {
+        margin-top: var(--nav-hero-gap) !important; /* 6px gap */
+        padding-top: 0 !important; /* Prevent padding from inflating the gap */
+        border-top: 0 !important; /* Avoid phantom lines */
     }
 }
 
@@ -1741,4 +1862,45 @@ main {
 @media (prefers-reduced-motion: reduce){
   .devi-glow{ animation: none; }
   .reveal{ transition:none; transform:none; opacity:1; }
+}
+
+/* Responsive adjustments for first section spacing */
+@media (max-width: 768px) {
+    /* First content section spacing adjustment after hero strips */
+    main > section:first-child,
+    .hero-style + section {
+        margin-top: 0 !important; /* kill external gap */
+        padding-top: var(--first-section-top) !important; /* ~20px */
+    }
+    
+    /* Memberships page specific adjustment */
+    #detailed-memberships {
+        margin-top: 0 !important; /* kill external gap */
+        padding-top: var(--first-section-top) !important; /* ~20px */
+    }
+    
+    /* D.E.V.I page hero text alignment adjustment */
+    .devi-content-left {
+        padding-top: calc(32px - 8px); /* Slightly less reduction on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    /* First content section spacing adjustment after hero strips */
+    main > section:first-child,
+    .hero-style + section {
+        margin-top: 0 !important; /* kill external gap */
+        padding-top: var(--first-section-top) !important; /* ~20px */
+    }
+    
+    /* Memberships page specific adjustment */
+    #detailed-memberships {
+        margin-top: 0 !important; /* kill external gap */
+        padding-top: var(--first-section-top) !important; /* ~20px */
+    }
+    
+    /* D.E.V.I page hero text alignment adjustment */
+    .devi-content-left {
+        padding-top: calc(32px - 6px); /* Minimal reduction on small mobile */
+    }
 }

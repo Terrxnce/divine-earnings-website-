@@ -12,175 +12,387 @@
     
     <style>
         /* D.E.V.I Page Specific Styles */
-        .devi-hero {
-            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
-            min-height: 80vh;
-            display: flex;
+        .devi-hero-v2 {
+            background: linear-gradient(135deg, #0a0815 0%, #151025 100%);
+            min-height: 88vh;
+            display: grid;
             align-items: center;
             position: relative;
             overflow: hidden;
+            padding: 120px 0 80px 0;
+            margin-top: var(--nav-hero-gap) !important; /* 6px gap */
+            padding-top: 0 !important; /* Prevent padding from inflating the gap */
+            border-top: 0 !important; /* Avoid phantom lines */
         }
         
-        .devi-hero::before {
+        .devi-hero-v2::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 30% 50%, rgba(111, 99, 231, 0.1) 0%, transparent 50%),
+            background: radial-gradient(circle at 30% 50%, rgba(111, 99, 231, 0.08) 0%, transparent 50%),
                         radial-gradient(circle at 70% 20%, rgba(111, 99, 231, 0.05) 0%, transparent 50%);
             pointer-events: none;
         }
         
-        /* D.E.V.I Visual Element */
-        .devi-visual {
+        .devi-hero-v2::after {
+            content: '';
             position: absolute;
-            right: 10%;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 200px;
-            height: 200px;
-            opacity: 0.1;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 80% 20%, rgba(111, 99, 231, 0.03) 0%, transparent 70%);
             pointer-events: none;
-            z-index: 1;
+            animation: subtleGlow 90s ease-in-out infinite;
         }
         
-        .devi-visual::before {
-            content: '';
-            position: absolute;
+        @keyframes subtleGlow {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            .devi-hero-v2::after {
+                animation: none;
+            }
+        }
+        
+        .devi-hero-container {
+            max-width: 1200px;
             width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(111, 99, 231, 0.3) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: pulse 3s ease-in-out infinite;
-        }
-        
-        .devi-visual::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #6F63E7, #8B7CF6);
-            border-radius: 50%;
-            box-shadow: 0 0 30px rgba(111, 99, 231, 0.5);
-            animation: glow 2s ease-in-out infinite alternate;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.3; }
-            50% { transform: scale(1.1); opacity: 0.5; }
-        }
-        
-        @keyframes glow {
-            0% { box-shadow: 0 0 30px rgba(111, 99, 231, 0.5); }
-            100% { box-shadow: 0 0 50px rgba(111, 99, 231, 0.8); }
-        }
-        
-        .devi-hero-content {
-            text-align: center;
-            max-width: 800px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 0 32px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            justify-items: center;
             position: relative;
             z-index: 2;
         }
         
-        .devi-title {
-            font-size: 4rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 1rem;
-            text-shadow: 0 0 30px rgba(111, 99, 231, 0.3);
+        .devi-content-left {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            justify-self: start;
+            align-self: center;
+            padding-top: 20px; /* Reduced from 32px by 12px for eye-line alignment */
             position: relative;
         }
         
-        .devi-title::before {
-            content: 'D.E.V.I';
+        .devi-content-left::before {
+            content: '';
             position: absolute;
             top: 0;
-            left: 0;
-            color: #6F63E7;
-            animation: glitch 3s infinite;
-            clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+            left: -32px;
+            right: -32px;
+            bottom: 0;
+            background: linear-gradient(90deg, rgba(0,0,0,0.045) 0%, transparent 100%);
+            pointer-events: none;
+            z-index: -1;
         }
         
-        .devi-title::after {
-            content: 'D.E.V.I';
-            position: absolute;
-            top: 0;
-            left: 0;
-            color: #8B7CF6;
-            animation: glitch 3s infinite reverse;
-            clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+        .devi-content-right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            justify-self: end;
+            align-self: center;
+            opacity: 0;
+            transform: translateX(40px);
+            transition: all 0.8s ease-out;
         }
         
-        @keyframes glitch {
-            0%, 100% { transform: translate(0); }
-            20% { transform: translate(-2px, 2px); }
-            40% { transform: translate(-2px, -2px); }
-            60% { transform: translate(2px, 2px); }
-            80% { transform: translate(2px, -2px); }
+        .devi-hero-v2.show .devi-content-right {
+            opacity: 1;
+            transform: translateX(0);
         }
         
-        .devi-subtitle {
-            font-size: 1.5rem;
-            color: #6F63E7;
-            margin-bottom: 2rem;
-            font-weight: 300;
+        .devi-image-container {
+            position: relative;
+            width: 100%;
+            max-width: 480px;
+            max-height: 640px;
+            aspect-ratio: 3/4;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 80px rgba(111, 99, 231, 0.2);
         }
         
-        .devi-description {
-            font-size: 1.2rem;
-            color: #ffffff;
-            margin-bottom: 2rem;
-            line-height: 1.6;
-            font-weight: 400;
+        .devi-face {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 24px;
+            animation: facePulse 6s ease-in-out infinite;
+        }
+        
+        @keyframes facePulse {
+            0% { box-shadow: 0 0 20px rgba(111, 99, 231, 0.2); }
+            50% { box-shadow: 0 0 40px rgba(111, 99, 231, 0.4); }
+            100% { box-shadow: 0 0 20px rgba(111, 99, 231, 0.2); }
         }
         
         .devi-intrigue {
-            font-size: 1rem;
+            font-size: 0.875rem;
             color: #6F63E7;
-            margin-bottom: 1rem;
-            font-weight: 500;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.15em;
+            margin: 0;
+            margin-bottom: 0.5rem;
+            margin-top: 12px;
+            opacity: 0.9;
+        }
+        
+        .devi-title {
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 800;
+            color: #6F63E7;
+            line-height: 0.85;
+            margin: 0;
+            text-shadow: 0 0 30px rgba(111, 99, 231, 0.3);
+        }
+        
+        .devi-subtitle {
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            color: #1F1F27;
+            font-weight: 500;
+            margin: 0;
+            line-height: 1.3;
+        }
+        
+        .devi-tagline {
+            font-size: 1.125rem;
+            color: #1F1F27;
+            font-weight: 400;
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        .devi-description {
+            font-size: 1.125rem;
+            color: #1F1F27;
+            font-weight: 500;
+            margin: 0;
+            line-height: 1.6;
         }
         
         .devi-coming-soon {
-            font-size: 1.8rem;
+            font-size: clamp(1.5rem, 4vw, 2rem);
             color: #6F63E7;
             font-weight: 700;
-            margin-bottom: 2rem;
+            margin: 0;
+            margin-bottom: 0.5rem;
             text-shadow: 0 0 20px rgba(111, 99, 231, 0.3);
         }
         
         .devi-cta-microcopy {
-            font-size: 0.9rem;
-            color: #cccccc;
-            margin-bottom: 1.5rem;
+            font-size: 0.875rem;
+            color: #1A1A1A;
             font-weight: 400;
+            margin: 0;
+        }
+        
+        .devi-cta-disclaimer {
+            font-size: 0.75rem;
+            color: #2B2B36;
+            font-weight: 400;
+            margin: 0;
+            margin-top: 0.5rem;
+            font-style: italic;
         }
         
         .devi-cta {
-            display: inline-block;
-            background: linear-gradient(135deg, #6F63E7 0%, #8B7CF6 100%);
-            color: white;
-            padding: 1rem 3rem;
-            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #6F63E7 0%, #4B3FCC 100%);
+            color: #ffffff;
+            padding: 1rem 2.5rem;
+            height: 56px;
+            border-radius: 28px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
+            font-weight: 700;
+            font-size: 1.125rem;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(111, 99, 231, 0.3);
+            box-shadow: 0 8px 32px rgba(111, 99, 231, 0.3);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
         }
         
         .devi-cta:hover {
             transform: translateY(-2px);
-            box-shadow: 0 15px 40px rgba(111, 99, 231, 0.4);
+            box-shadow: 0 12px 40px rgba(111, 99, 231, 0.4);
+        }
+        
+        .devi-cta:focus {
+            outline: 2px solid #ffffff;
+            outline-offset: 2px;
+        }
+        
+        .devi-cta:active {
+            transform: translateY(0);
+        }
+        
+        .devi-cta-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-top: 0;
+        }
+        
+        .devi-bullets {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        
+        .devi-bullets li {
+            color: #1A1A1A;
+            font-size: 1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .devi-bullets li strong {
+            font-weight: 600;
+            color: #000000;
+        }
+        
+        .devi-bullets .icon {
+            font-size: 1.25rem;
+            color: #6F63E7;
+            flex-shrink: 0;
+        }
+        
+        .devi-meta {
+            font-size: 0.8rem;
+            color: #2B2B36;
+            margin-top: 1.5rem;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .devi-hero-v2 {
+                padding: 100px 0 80px 0;
+                margin-top: var(--nav-hero-gap) !important; /* 6px gap */
+                padding-top: 0 !important; /* Prevent padding from inflating the gap */
+                border-top: 0 !important; /* Avoid phantom lines */
+            }
+            
+            .devi-hero-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+                align-items: center;
+            }
+            
+            .devi-content-left {
+                justify-self: center;
+                align-self: center;
+                padding-top: 0;
+            }
+            
+            .devi-content-right {
+                order: -1;
+                justify-self: center;
+                align-self: center;
+                margin-bottom: 1rem;
+            }
+            
+            .devi-image-container {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .devi-hero-v2 {
+                min-height: 88vh;
+                padding: 80px 0 24px 0;
+                margin-top: var(--nav-hero-gap) !important; /* 6px gap */
+                padding-top: 0 !important; /* Prevent padding from inflating the gap */
+                border-top: 0 !important; /* Avoid phantom lines */
+            }
+            
+            .devi-hero-container {
+                padding: 0 24px;
+                gap: 1.5rem;
+                align-items: center;
+            }
+            
+            .devi-content-left {
+                gap: 1rem;
+                justify-self: center;
+                align-self: center;
+                padding-top: 0;
+            }
+            
+            .devi-content-right {
+                justify-self: center;
+                align-self: center;
+            }
+            
+            .devi-image-container {
+                max-width: 320px;
+                aspect-ratio: 3/4;
+            }
+            
+            .devi-title {
+                font-size: clamp(2.5rem, 12vw, 3.5rem);
+            }
+            
+            .devi-subtitle {
+                font-size: clamp(1.125rem, 4vw, 1.375rem);
+            }
+            
+            .devi-cta {
+                height: 48px;
+                padding: 0.875rem 2rem;
+                font-size: 1rem;
+            }
+            
+            .devi-bullets {
+                gap: 0.5rem;
+            }
+            
+            .devi-bullets li {
+                font-size: 0.875rem;
+                gap: 0.5rem;
+            }
+            
+            .devi-bullets .icon {
+                font-size: 1rem;
+            }
+            
+            .devi-cta-microcopy {
+                font-size: 0.8rem;
+                line-height: 1.4;
+            }
+            
+            .devi-cta-disclaimer {
+                font-size: 0.7rem;
+                margin-top: 0.375rem;
+            }
+            
+            .devi-meta {
+                font-size: 0.75rem;
+                margin-top: 1.25rem;
+            }
         }
         
 
@@ -458,20 +670,35 @@
         </div>
     </header>
 
-    <!-- D.E.V.I Hero Section -->
-    <section class="devi-hero">
-        <div class="devi-visual"></div>
-        <div class="devi-hero-content">
-            <p class="devi-intrigue">The future of trading is almost here</p>
-            <h1 class="devi-title">D.E.V.I</h1>
-            <p class="devi-subtitle">Divine Earnings Virtual Intelligence</p>
-            <p class="devi-description">
-                Structure first. AI-governed.<br>
-                D.E.V.I is a rules-first engine that trades like a professional: session aware, risk-disciplined, and fully transparent.
-            </p>
-            <p class="devi-coming-soon">Coming soon.</p>
-            <p class="devi-cta-microcopy">Get early access + priority beta invites</p>
-            <a href="#waitlist" class="devi-cta">Join the Waitlist</a>
+    <!-- D.E.V.I Hero Section v2 -->
+    <section class="devi-hero-v2">
+        <div class="devi-hero-container">
+            <div class="devi-content-left">
+                <p class="devi-intrigue">The future of trading is almost here</p>
+                <h1 class="devi-title">D.E.V.I</h1>
+                <p class="devi-subtitle">Divine Earnings Virtual Intelligence</p>
+                <p class="devi-tagline">An AI trader with rules, structure, and zero emotion.</p>
+                <p class="devi-description">
+                    D.E.V.I is a rules-first engine that trades like a professional:
+                </p>
+                <ul class="devi-bullets">
+                    <li><span class="icon">📊</span><strong>Structure-Scoring Engine</strong></li>
+                    <li><span class="icon">🧠</span><strong>AI-Governed Decisions</strong></li>
+                    <li><span class="icon">🕰️</span><strong>Session-Aware Execution</strong></li>
+                </ul>
+                <p class="devi-coming-soon">Coming soon.</p>
+                <div class="devi-cta-group">
+                    <p class="devi-cta-microcopy">Join the interest list. We'll notify you when beta opens.</p>
+                    <a href="#waitlist" class="devi-cta">⏳ Join the Waitlist</a>
+                    <p class="devi-cta-disclaimer">Interest list only. Invites not guaranteed.</p>
+                </div>
+                <p class="devi-meta">Powered by D.E.V.I Engine v2.4 — Session-aware. Risk-governed. Live-tested.</p>
+            </div>
+            <div class="devi-content-right">
+                <div class="devi-image-container">
+                    <img src="images/devi_full.png" alt="D.E.V.I - AI Trading Intelligence" class="devi-face" loading="lazy" decoding="async" />
+                </div>
+            </div>
         </div>
     </section>
 
@@ -542,9 +769,9 @@
                 </li>
             </ol>
             
-            <p style="text-align: center; color: #cccccc; font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
-                Currently in private live testing on prop-style accounts. Beta access will be invite-only for existing community members and waitlist subscribers.
-            </p>
+                         <p style="text-align: center; color: #cccccc; font-size: 1.1rem; max-width: 600px; margin: 3.5rem auto 0;">
+                 Currently in private live testing on prop-style accounts. Beta access will be invite-only for community members.
+             </p>
         </div>
     </section>
 
@@ -579,9 +806,9 @@
     <section id="waitlist" class="devi-section">
         <div class="devi-container">
             <h2 style="text-align: center; color: #ffffff; font-size: 2.5rem; margin-bottom: 1rem;">Join the Waitlist</h2>
-            <p style="text-align: center; color: #cccccc; font-size: 1.2rem; max-width: 600px; margin: 0 auto 3rem; line-height: 1.6;">
-                Get priority Beta access, Early-Access pricing, and behind-the-scenes updates.
-            </p>
+                         <p style="text-align: center; color: #cccccc; font-size: 1.2rem; max-width: 600px; margin: 0 auto 3rem; line-height: 1.6;">
+                 Get notified when beta opens and receive behind-the-scenes updates.
+             </p>
             
             <form id="waitlist-form" class="waitlist-form" onsubmit="return submitWaitlist(event)">
                 <div class="form-field">
@@ -605,9 +832,9 @@
                 <div id="status" class="form-status" aria-live="polite" style="display: none;"></div>
             </form>
             
-            <p class="privacy-note">
-                We use your email to send D.E.V.I updates, invites, and early access offers. You can unsubscribe anytime.
-            </p>
+                         <p class="privacy-note">
+                 We use your email to send D.E.V.I updates and notifications. You can unsubscribe anytime.
+             </p>
         </div>
     </section>
 
@@ -665,6 +892,17 @@
     <script src="assets/js/animations/devi_lightning_blobs.js"></script>
     
     <script>
+        // D.E.V.I Hero Animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const heroSection = document.querySelector('.devi-hero-v2');
+            if (heroSection) {
+                // Trigger animation after a short delay
+                setTimeout(() => {
+                    heroSection.classList.add('show');
+                }, 300);
+            }
+        });
+        
         async function submitWaitlist(e) {
             e.preventDefault();
             const status = document.getElementById('status');
@@ -705,3 +943,4 @@
     </script>
 </body>
 </html>
+
