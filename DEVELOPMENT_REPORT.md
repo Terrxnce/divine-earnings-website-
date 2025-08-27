@@ -36,8 +36,7 @@ Website2/
     ├── logo1.jpg           - Secondary brand image
     ├── favicon.svg         - Custom "DE" favicon
     ├── discord.svg         - Social media icon
-    ├── instagram.svg       - Social media icon
-    └── whatsapp.svg        - Social media icon
+    └── instagram.svg       - Social media icon
 ```
 
 **Total:** 8 HTML pages, 1,449 lines CSS, 515 lines JavaScript = ~4,000 lines of code
@@ -97,7 +96,7 @@ Website2/
 - **Three membership tiers** with detailed comparison
 - **Stripe payment integration** (live payment links)
 - **Performance tracking** with realistic data
-- **Multiple contact channels** (WhatsApp, Discord, Instagram)
+- **Multiple contact channels** (Discord, Instagram)
 - **Risk disclaimers** for legal compliance
 
 ---

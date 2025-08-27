@@ -531,7 +531,8 @@ main {
 .image-container {
     border-radius: var(--border-radius);
     overflow: hidden;
-    box-shadow: var(--box-shadow);
+    box-shadow: none;
+    background: transparent;
 }
 
 .image-container img {
@@ -539,6 +540,7 @@ main {
     height: auto;
     display: block;
     transition: transform 0.5s ease;
+    background: transparent;
 }
 
 .image-container:hover img {

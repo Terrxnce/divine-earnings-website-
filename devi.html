@@ -183,6 +183,8 @@
             box-shadow: 0 15px 40px rgba(111, 99, 231, 0.4);
         }
         
+
+        
         .devi-section {
             padding: 5rem 0;
             background: #000000;
@@ -230,6 +232,7 @@
             line-height: 1.6;
         }
         
+        /* Legacy styles for other sections */
         .devi-feature-list {
             list-style: none;
             padding: 0;
@@ -392,6 +395,8 @@
             white-space: nowrap;
         }
         
+
+        
         @media (max-width: 768px) {
             .devi-title {
                 font-size: 2.5rem;
@@ -446,11 +451,7 @@
                     <li><a href="memberships.html">Memberships</a></li>
                     <li><a href="devi.html" class="active">D.E.V.I</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li class="nav-item nav-devi">
-                        <a href="https://devi.ai" target="_blank" rel="noopener noreferrer" class="btn-devi-nav" aria-label="Open D.E.V.I in a new tab">
-                            D.E.V.I
-                        </a>
-                    </li>
+
                     <li><a href="https://billing.stripe.com/p/login/dR65lDf1Dgqu4y4bII" class="nav-button">Client Portal</a></li>
                 </ul>
             </nav>
@@ -468,7 +469,7 @@
                 Structure first. AI-governed.<br>
                 D.E.V.I is a rules-first engine that trades like a professional: session aware, risk-disciplined, and fully transparent.
             </p>
-            <p class="devi-coming-soon">Coming Soon.</p>
+            <p class="devi-coming-soon">Coming soon.</p>
             <p class="devi-cta-microcopy">Get early access + priority beta invites</p>
             <a href="#waitlist" class="devi-cta">Join the Waitlist</a>
         </div>
@@ -477,47 +478,43 @@
     <!-- What is D.E.V.I Section -->
     <section class="devi-section">
         <div class="devi-container">
-            <h2 style="text-align: center; color: #ffffff; font-size: 2.5rem; margin-bottom: 1rem;">What is D.E.V.I</h2>
-            <p style="text-align: center; color: #cccccc; font-size: 1.2rem; max-width: 800px; margin: 0 auto 3rem; line-height: 1.6;">
-                D.E.V.I (Divine Earnings Virtual Intelligence) blends institutional price-action structure with an AI governor. 
-                Technicals lead decisions; AI enforces context and risk. The result is fewer impulsive trades, clear system behavior, 
-                and transparent logs you can audit.
+            <h2 style="text-align: center; color: #ffffff; font-size: 2.5rem; margin-bottom: 1rem;">What is D.E.V.I?</h2>
+            <p style="text-align: center; color: #cccccc; font-size: 1.2rem; max-width: 800px; margin: 0 auto 2.25rem; line-height: 1.6;">
+                D.E.V.I blends professional price-action structure with an AI governor. Technicals lead decisions; AI enforces context and risk.
+                Result: fewer impulsive trades, consistent behavior, and transparent logs you can audit.
             </p>
-            
-            <div class="devi-grid">
-                <div class="devi-card">
-                    <h3><i class="fas fa-brain"></i> Structure Engine</h3>
+
+            <!-- Benefit-first cards -->
+            <div class="devi-grid" aria-label="D.E.V.I pillars">
+                <article class="devi-card">
+                    <h3><i class="fas fa-brain" aria-hidden="true"></i> Structure Engine</h3>
                     <ul class="devi-feature-list">
-                        <li>OB/FVG analysis</li>
-                        <li>BOS/CHoCH detection</li>
-                        <li>EMA trend alignment (21/50/200)</li>
-                        <li>Sweeps and engulfings</li>
-                        <li>Rejection patterns</li>
+                        <li>Reads market structure like a pro</li>
+                        <li>Trades with session awareness</li>
+                        <li>Confirms trend before acting</li>
                     </ul>
-                </div>
-                
-                <div class="devi-card">
-                    <h3><i class="fas fa-robot"></i> AI Governor</h3>
+                </article>
+
+                <article class="devi-card">
+                    <h3><i class="fas fa-robot" aria-hidden="true"></i> AI Governor</h3>
                     <ul class="devi-feature-list">
-                        <li>LLaMA 3 validation</li>
-                        <li>Macro/sentiment context</li>
-                        <li>Weak setup filtering</li>
-                        <li>Risk enforcement</li>
-                        <li>Decision transparency</li>
+                        <li>Filters weak setups</li>
+                        <li>Adds macro/sentiment context</li>
+                        <li>Explains decisions you can audit</li>
                     </ul>
-                </div>
-                
-                <div class="devi-card">
-                    <h3><i class="fas fa-shield-alt"></i> Risk Management</h3>
+                </article>
+
+                <article class="devi-card">
+                    <h3><i class="fas fa-shield-alt" aria-hidden="true"></i> Risk Management</h3>
                     <ul class="devi-feature-list">
-                        <li>ATR-based SL/TP</li>
-                        <li>Structure-aware placement</li>
-                        <li>Session windows</li>
-                        <li>Hourly trade limits</li>
-                        <li>Equity profit protection</li>
+                        <li>Rule-based SL/TP placement</li>
+                        <li>Hourly and session limits</li>
+                        <li>Equity-level profit protection</li>
                     </ul>
-                </div>
+                </article>
             </div>
+
+
         </div>
     </section>
 
@@ -526,24 +523,24 @@
         <div class="devi-container">
             <h2 style="text-align: center; color: #ffffff; font-size: 2.5rem; margin-bottom: 3rem;">Development Roadmap</h2>
             
-            <div class="roadmap">
-                <div class="roadmap-step active">
-                    <i class="fas fa-check"></i>
+            <ol class="roadmap">
+                <li class="roadmap-step active">
+                    <i class="fas fa-check" aria-hidden="true"></i>
                     <div class="roadmap-label">Private Testing</div>
-                </div>
-                <div class="roadmap-step">
+                </li>
+                <li class="roadmap-step">
                     <span>2</span>
                     <div class="roadmap-label">Beta Access</div>
-                </div>
-                <div class="roadmap-step">
+                </li>
+                <li class="roadmap-step">
                     <span>3</span>
                     <div class="roadmap-label">Early Access</div>
-                </div>
-                <div class="roadmap-step">
+                </li>
+                <li class="roadmap-step">
                     <span>4</span>
                     <div class="roadmap-label">Full Release</div>
-                </div>
-            </div>
+                </li>
+            </ol>
             
             <p style="text-align: center; color: #cccccc; font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
                 Currently in private live testing on prop-style accounts. Beta access will be invite-only for existing community members and waitlist subscribers.
@@ -560,20 +557,20 @@
             </p>
             
             <div class="devi-grid">
-                <div class="devi-card">
-                    <h3><i class="fas fa-chart-line"></i> Prop Firm Traders</h3>
+                <article class="devi-card">
+                    <h3><i class="fas fa-chart-line" aria-hidden="true"></i> Prop Firm Traders</h3>
                     <p>Built to meet strict prop firm requirements with transparent audit trails and disciplined risk management.</p>
-                </div>
+                </article>
                 
-                <div class="devi-card">
-                    <h3><i class="fas fa-user-graduate"></i> Serious Retail Traders</h3>
+                <article class="devi-card">
+                    <h3><i class="fas fa-user-graduate" aria-hidden="true"></i> Serious Retail Traders</h3>
                     <p>For traders who want institutional-grade tools with clear rules, session awareness, and full transparency.</p>
-                </div>
+                </article>
                 
-                <div class="devi-card">
-                    <h3><i class="fas fa-eye"></i> Transparency Seekers</h3>
-                    <p>Every decision is logged and auditable. No black box - you see exactly why trades are taken or rejected.</p>
-                </div>
+                <article class="devi-card">
+                    <h3><i class="fas fa-eye" aria-hidden="true"></i> Transparency Seekers</h3>
+                    <p>Every decision is logged and auditable. No black box — you see exactly why trades are taken or rejected.</p>
+                </article>
             </div>
         </div>
     </section>
@@ -619,8 +616,8 @@
         <canvas id="devi-lightning-bg" aria-hidden="true"></canvas>
         <div class="strip-inner">
             <p><strong>D.E.V.I</strong> powers our smartest signals.</p>
-            <a href="https://devi.ai" target="_blank" rel="noopener noreferrer" class="btn-devi-cta btn-devi-cta--small">
-                Explore D.E.V.I.ai
+            <a href="devi.html" class="btn-devi-cta btn-devi-cta--small">
+                Explore D.E.V.I
             </a>
         </div>
     </section>

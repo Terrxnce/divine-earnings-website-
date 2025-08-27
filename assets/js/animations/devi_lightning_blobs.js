@@ -11,10 +11,10 @@ const DEVILightningConfig = {
   interactionRadius: 120,
   colors: { 
     oil: {
-      primary: '#00a6ff',      // Electric blue like the face patterns
-      secondary: '#0088ff',    // Outline color - slightly darker
-      light: '#4bc4ff',        // Bright glow center - intense neon
-      dark: '#0066cc'          // Darker shade for depth
+      primary: '#6F63E7',      // Purple to match hero section
+      secondary: '#5749c4',    // Outline color - slightly darker
+      light: '#9189ef',        // Bright glow center - lighter purple
+      dark: '#4a3f9e'          // Darker shade for depth
     },
     water: {
       primary: '#1a1a2e',
@@ -274,7 +274,7 @@ class DEVILightningBlobs {
       this.width * 0.5, this.height * 0.3, 0,
       this.width * 0.5, this.height * 0.3, this.width * 0.8
     );
-    ambientGradient.addColorStop(0, 'rgba(75, 196, 255, 0.12)'); // #4bc4ff with opacity - brighter glow
+    ambientGradient.addColorStop(0, 'rgba(111, 99, 231, 0.12)'); // #6F63E7 with opacity - purple glow
     ambientGradient.addColorStop(1, 'rgba(0, 0, 0, 0.1)');
     
     this.ctx.fillStyle = ambientGradient;
@@ -341,7 +341,7 @@ class DEVILightningBlobs {
       this.width * 0.5, this.height * 0.3, 0,
       this.width * 0.5, this.height * 0.3, this.width * 0.8
     );
-    ambientGradient.addColorStop(0, 'rgba(75, 196, 255, 0.12)'); // #4bc4ff with opacity - brighter glow
+    ambientGradient.addColorStop(0, 'rgba(111, 99, 231, 0.12)'); // #6F63E7 with opacity - purple glow
     ambientGradient.addColorStop(1, 'rgba(0, 0, 0, 0.1)');
     
     this.ctx.fillStyle = ambientGradient;
