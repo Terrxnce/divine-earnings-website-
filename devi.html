@@ -11,6 +11,119 @@
     <meta name="description" content="D.E.V.I - Divine Earnings Virtual Intelligence. An AI-assisted, structure-first trading engine built for discipline, clarity, and proof. Coming Soon.">
     
     <style>
+        /* Ensure D.E.V.I page header matches other pages */
+        #top-header {
+            background-color: #000000 !important;
+            color: var(--light-text) !important;
+            position: sticky !important;
+            width: 100% !important;
+            top: 0 !important;
+            left: 0 !important;
+            z-index: 1000 !important;
+            padding: 1.25rem 0 !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25) !important;
+            transition: var(--transition) !important;
+            border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+        }
+        
+        .header-container {
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            max-width: 1200px !important;
+            margin: 0 auto !important;
+            padding: 0 1.5rem !important;
+        }
+        
+        .logo {
+            display: flex !important;
+            align-items: center !important;
+        }
+        
+        .logo img {
+            height: 46px !important;
+            max-width: 200px !important;
+            object-fit: contain !important;
+        }
+        
+        #main-navigation ul {
+            display: flex !important;
+            list-style: none !important;
+            gap: 1.5rem !important;
+            align-items: center !important;
+        }
+        
+        #main-navigation a {
+            color: var(--light-text) !important;
+            text-decoration: none !important;
+            font-weight: 500 !important;
+            padding: 16px 20px !important;
+            transition: var(--transition) !important;
+            position: relative !important;
+            border-radius: 4px !important;
+        }
+        
+        #main-navigation a::after {
+            content: '' !important;
+            position: absolute !important;
+            bottom: 2px !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+            width: 0 !important;
+            height: 3px !important;
+            background-color: var(--primary-color) !important;
+            border-radius: 2px !important;
+            transition: var(--transition) !important;
+            pointer-events: none !important;
+        }
+        
+        #main-navigation a:hover {
+            background-color: rgba(111, 99, 231, 0.1) !important;
+        }
+        
+        #main-navigation a:hover::after {
+            width: 18px !important;
+        }
+        
+        #main-navigation a.active::after {
+            width: 18px !important;
+        }
+        
+        /* Ensure active state doesn't shift text */
+        #main-navigation a.active {
+            position: relative !important;
+        }
+        
+        /* Prevent any text shifting from pseudo-elements */
+        #main-navigation a {
+            position: relative !important;
+            display: inline-block !important;
+        }
+        
+        #main-navigation a:focus {
+            outline: 2px solid #6F63E7 !important;
+            outline-offset: 2px !important;
+        }
+        
+        .nav-button {
+            background-color: var(--primary-color) !important;
+            padding: 16px 24px !important;
+            border-radius: var(--border-radius) !important;
+            transition: var(--transition) !important;
+            font-weight: 600 !important;
+        }
+        
+        .nav-button:hover {
+            background-color: var(--primary-dark) !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 4px 12px rgba(111, 99, 231, 0.3) !important;
+        }
+        
+        .nav-button:focus {
+            outline: 2px solid #6F63E7 !important;
+            outline-offset: 2px !important;
+        }
+        
         /* D.E.V.I Page Specific Styles */
         .devi-hero-v2 {
             background: linear-gradient(135deg, #0a0815 0%, #151025 100%);
@@ -812,8 +925,8 @@
             
             <form id="waitlist-form" class="waitlist-form" onsubmit="return submitWaitlist(event)">
                 <div class="form-field">
-                    <label for="name">Name</label>
-                    <input id="name" name="name" type="text" autocomplete="name" />
+                    <label for="name">Name *</label>
+                    <input id="name" name="name" type="text" required autocomplete="name" maxlength="50" />
                 </div>
 
                 <div class="form-field">
@@ -822,8 +935,13 @@
                 </div>
 
                 <div class="form-field">
-                    <label for="notes">Notes (optional)</label>
-                    <textarea id="notes" name="notes" rows="3" placeholder="Tell us what you trade…"></textarea>
+                    <label for="instagram">Instagram Handle (optional)</label>
+                    <input id="instagram" name="instagram" type="text" placeholder="@username" maxlength="30" />
+                </div>
+
+                <div class="form-field">
+                    <label for="comments">Comments (optional)</label>
+                    <textarea id="comments" name="comments" rows="3" placeholder="Tell us about your trading experience, what you trade, etc." maxlength="500"></textarea>
                 </div>
 
                 <input type="hidden" id="source" name="source" value="website" />
@@ -901,44 +1019,106 @@
                     heroSection.classList.add('show');
                 }, 300);
             }
+            
+            // Enhanced smooth scrolling for the waitlist button
+            const waitlistButton = document.querySelector('.devi-cta[href="#waitlist"]');
+            if (waitlistButton) {
+                waitlistButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const waitlistSection = document.getElementById('waitlist');
+                    if (waitlistSection) {
+                        waitlistSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            }
         });
         
         async function submitWaitlist(e) {
             e.preventDefault();
+            
+            // Get form elements
+            const form = e.target;
             const status = document.getElementById('status');
             const btn = document.getElementById('submitBtn');
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const instagramInput = document.getElementById('instagram');
+            const commentsInput = document.getElementById('comments');
             
+            // Basic validation
+            if (!nameInput.value.trim()) {
+                showError('Please enter your name');
+                return false;
+            }
+            
+            if (!emailInput.value.trim() || !isValidEmail(emailInput.value)) {
+                showError('Please enter a valid email address');
+                return false;
+            }
+            
+            // Instagram validation
+            let instagram = instagramInput.value.trim();
+            if (instagram && !instagram.startsWith('@')) {
+                instagram = '@' + instagram;
+                instagramInput.value = instagram;
+            }
+            
+            // Show loading state
             status.style.display = 'block';
-            status.textContent = 'Submitting…';
+            status.textContent = 'Submitting...';
             status.className = 'form-status';
             btn.disabled = true;
-
+            
             const payload = {
-                name: document.getElementById('name').value || '',
-                email: document.getElementById('email').value || '',
-                notes: document.getElementById('notes').value || '',
+                name: nameInput.value.trim(),
+                email: emailInput.value.trim().toLowerCase(),
+                instagram: instagram || '',
+                comments: commentsInput.value.trim(),
                 source: document.getElementById('source').value || 'website'
             };
-
-            try {
-                const res = await fetch('YOUR_APPS_SCRIPT_WEB_APP_URL_HERE', {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-
-                status.textContent = 'Thanks — you\'re on the list. Check your email soon.';
-                status.className = 'form-status success';
-                e.target.reset();
+            
+                         try {
+                 // Create form data instead of JSON
+                 const formData = new FormData();
+                 formData.append('name', payload.name);
+                 formData.append('email', payload.email);
+                 formData.append('instagram', payload.instagram);
+                 formData.append('comments', payload.comments);
+                 formData.append('source', payload.source);
+                 
+                 const response = await fetch('https://script.google.com/macros/s/AKfycbxBzaieBXyTuY1p4jn4lULLyCzJXADO6zIJKEGYPlc55NS3cV3Wxg8AR3j7zRBZiKkX/exec', {
+                     method: 'POST',
+                     mode: 'no-cors',
+                     body: formData
+                 });
+                
+                                 // Since we're using no-cors, we can't read the response
+                 // Assume success if no error was thrown
+                 status.textContent = 'Thanks! You\'re on the waitlist. We\'ll notify you when beta opens.';
+                 status.className = 'form-status success';
+                 form.reset();
             } catch (err) {
-                status.textContent = 'Error — please try again or email us.';
-                status.className = 'form-status error';
-                console.error(err);
+                console.error('Submission error:', err);
+                showError('Error submitting form. Please try again or contact us.');
             } finally {
                 btn.disabled = false;
             }
             return false;
+        }
+
+        function showError(message) {
+            const status = document.getElementById('status');
+            status.style.display = 'block';
+            status.textContent = message;
+            status.className = 'form-status error';
+        }
+
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
         }
     </script>
 </body>
