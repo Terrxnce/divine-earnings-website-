@@ -262,24 +262,26 @@ section:nth-child(even) {
 @media (max-width: 768px) {
     body::before {
         background: 
-            radial-gradient(circle at 20% 80%, rgba(111, 99, 231, 0.1) 0%, transparent 40%),
-            radial-gradient(circle at 80% 20%, rgba(145, 137, 239, 0.08) 0%, transparent 40%);
-        animation: backgroundShift 15s ease-in-out infinite;
+            radial-gradient(circle at 20% 80%, rgba(111, 99, 231, 0.08) 0%, transparent 40%),
+            radial-gradient(circle at 80% 20%, rgba(145, 137, 239, 0.06) 0%, transparent 40%);
+        animation: backgroundShift 20s ease-in-out infinite;
     }
     
     body::after {
-        background-size: 60px 60px, 90px 90px, 120px 120px;
-        animation: floatPattern 20s linear infinite;
+        background-size: 50px 50px, 80px 80px, 110px 110px;
+        animation: floatPattern 25s linear infinite;
     }
     
+    /* Mobile Section Spacing */
     section {
-        margin: 0.5rem 0;
-        border-radius: 12px;
-        backdrop-filter: blur(5px);
+        margin: 0.75rem 0;
+        border-radius: 16px;
+        backdrop-filter: blur(8px);
     }
     
     .value-card, .membership, .testimonial-content {
-        backdrop-filter: blur(5px);
+        backdrop-filter: blur(8px);
+        border-radius: 16px;
     }
     
     /* Mobile Navigation */
@@ -289,12 +291,12 @@ section:nth-child(even) {
         left: -100%;
         width: 100%;
         height: 100vh;
-        background: rgba(0, 0, 0, 0.95);
-        backdrop-filter: blur(20px);
+        background: rgba(0, 0, 0, 0.98);
+        backdrop-filter: blur(25px);
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: left 0.3s ease;
+        transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 999;
     }
     
@@ -304,21 +306,23 @@ section:nth-child(even) {
     
     #main-navigation ul {
         flex-direction: column;
-        gap: 1rem;
+        gap: 1.5rem;
         width: 100%;
-        padding: 2rem;
+        padding: 2.5rem 1.5rem;
     }
     
     #main-navigation a {
-        font-size: 1.25rem;
-        padding: 16px 24px;
+        font-size: 1.3rem;
+        padding: 18px 24px;
         width: 100%;
         text-align: center;
-        border-radius: 8px;
-        min-height: 48px;
+        border-radius: 12px;
+        min-height: 52px;
         display: flex;
         align-items: center;
         justify-content: center;
+        font-weight: 600;
+        letter-spacing: 0.5px;
     }
     
     .mobile-menu-toggle {
@@ -326,7 +330,7 @@ section:nth-child(even) {
     }
     
     .mobile-menu-toggle.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
+        transform: rotate(45deg) translate(6px, 6px);
     }
     
     .mobile-menu-toggle.active span:nth-child(2) {
@@ -334,67 +338,137 @@ section:nth-child(even) {
     }
     
     .mobile-menu-toggle.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
+        transform: rotate(-45deg) translate(8px, -7px);
     }
     
     /* Mobile logo adjustment */
     .logo img {
-        height: 40px;
+        height: 42px;
     }
     
     /* Mobile Hero Adjustments */
     #hero {
-        min-height: 68svh; /* Mobile minimum height */
+        min-height: 70svh;
         padding: 0 1rem 4rem;
     }
     
     .hero-content {
         max-width: 100%;
-        padding: 0 0.5rem;
+        padding: 0 0.75rem;
     }
     
     .hero-cta {
         flex-direction: column;
-        gap: 0.75rem;
+        gap: 1rem;
         align-items: center;
+        margin-top: 2rem;
     }
     
     .hero-cta .btn {
         width: 100%;
         max-width: 280px;
-        padding: 0.875rem 1.5rem;
-        font-size: 0.95rem;
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        font-weight: 600;
     }
     
-    .hero-microcopy {
-        font-size: 0.8rem;
+    /* Mobile Typography Improvements */
+    .hero-content h1 {
+        font-size: clamp(2.8rem, 10vw, 3.5rem);
+        line-height: 1.1;
+        margin-bottom: 1.75rem;
     }
     
-    /* Mobile Hero Subtitle Adjustments */
-    .hero-subtitle {
+    .hero-content p {
+        font-size: clamp(1.2rem, 4vw, 1.4rem);
+        line-height: 1.5;
         margin-bottom: 2rem;
     }
     
-    .subtitle-main {
-        font-size: clamp(1.1rem, 3vw, 1.5rem);
-        margin-bottom: 0.5rem;
+    /* Mobile Section Container */
+    .section-container {
+        padding: 0 1.25rem;
     }
     
-    .subtitle-separator {
-        width: 40px;
-        margin: 0.75rem auto;
+    /* Mobile Grid Layouts */
+    .value-cards,
+    .membership-container {
+        gap: 1.5rem;
     }
     
-    .hero-subtitle:hover .subtitle-separator {
-        width: 50px;
+    .value-card,
+    .membership {
+        padding: 2rem 1.5rem;
+        border-radius: 16px;
     }
     
-    .subtitle-secondary {
-        font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+    /* Mobile Testimonials */
+    .testimonial-slider {
+        padding: 0 0.5rem;
+    }
+    
+    .testimonial-content {
+        padding: 2rem 1.5rem;
+        border-radius: 16px;
+    }
+    
+    /* Mobile FAQ */
+    .faq-container {
+        gap: 1rem;
+    }
+    
+    .faq-item {
+        border-radius: 12px;
+    }
+    
+    .faq-question {
+        padding: 1.25rem 1.5rem;
+    }
+    
+    .faq-answer {
+        padding: 0 1.5rem 1.5rem;
+    }
+    
+    /* Mobile CTA Sections */
+    .cta-container {
+        padding: 3rem 1.5rem;
+        text-align: center;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        margin-top: 2rem;
+    }
+    
+    .cta-buttons .btn {
+        width: 100%;
+        max-width: 280px;
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+    
+    /* Mobile Footer */
+    .footer-columns {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .footer-column {
+        padding: 0 1rem;
+    }
+    
+    /* Mobile Back to Top */
+    #back-to-top {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 56px;
+        height: 56px;
     }
 }
-
-
 
 @media (max-width: 640px) {
     :root {
@@ -405,18 +479,138 @@ section:nth-child(even) {
 @media (max-width: 480px) {
     body::before {
         background: 
-            radial-gradient(circle at 20% 80%, rgba(111, 99, 231, 0.08) 0%, transparent 30%),
-            radial-gradient(circle at 80% 20%, rgba(145, 137, 239, 0.06) 0%, transparent 30%);
+            radial-gradient(circle at 20% 80%, rgba(111, 99, 231, 0.06) 0%, transparent 35%),
+            radial-gradient(circle at 80% 20%, rgba(145, 137, 239, 0.04) 0%, transparent 35%);
     }
     
     body::after {
-        background-size: 40px 40px, 60px 60px, 80px 80px;
-        animation: floatPattern 15s linear infinite;
+        background-size: 35px 35px, 55px 55px, 75px 75px;
+        animation: floatPattern 30s linear infinite;
     }
     
     /* Small mobile logo adjustment */
     .logo img {
-        height: 36px;
+        height: 38px;
+    }
+    
+    /* Small Mobile Hero */
+    #hero {
+        min-height: 65svh;
+        padding: 0 0.75rem 3rem;
+    }
+    
+    .hero-content {
+        padding: 0 0.5rem;
+    }
+    
+    .hero-content h1 {
+        font-size: clamp(2.4rem, 12vw, 3rem);
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-content p {
+        font-size: clamp(1.1rem, 4.5vw, 1.3rem);
+        margin-bottom: 1.75rem;
+    }
+    
+    .hero-cta {
+        gap: 0.875rem;
+        margin-top: 1.75rem;
+    }
+    
+    .hero-cta .btn {
+        max-width: 260px;
+        padding: 0.875rem 1.75rem;
+        font-size: 1rem;
+    }
+    
+    /* Small Mobile Section Container */
+    .section-container {
+        padding: 0 1rem;
+    }
+    
+    /* Small Mobile Cards */
+    .value-card,
+    .membership,
+    .testimonial-content {
+        padding: 1.75rem 1.25rem;
+        border-radius: 14px;
+    }
+    
+    /* Small Mobile Navigation */
+    #main-navigation ul {
+        padding: 2rem 1rem;
+        gap: 1.25rem;
+    }
+    
+    #main-navigation a {
+        font-size: 1.2rem;
+        padding: 16px 20px;
+        min-height: 48px;
+        border-radius: 10px;
+    }
+    
+    /* Small Mobile CTA */
+    .cta-container {
+        padding: 2.5rem 1rem;
+    }
+    
+    .cta-buttons .btn {
+        max-width: 240px;
+        padding: 0.875rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    /* Small Mobile FAQ */
+    .faq-question {
+        padding: 1rem 1.25rem;
+    }
+    
+    .faq-answer {
+        padding: 0 1.25rem 1.25rem;
+    }
+    
+    /* Small Mobile Footer */
+    .footer-column {
+        padding: 0 0.75rem;
+    }
+    
+    /* Small Mobile Back to Top */
+    #back-to-top {
+        bottom: 1.25rem;
+        right: 1.25rem;
+        width: 52px;
+        height: 52px;
+    }
+    
+    /* Small Mobile Contact */
+    .contact-card {
+        padding: 1.75rem 1.25rem;
+    }
+    
+    .contact-icon {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 1.25rem;
+    }
+    
+    .contact-icon i {
+        font-size: 2rem;
+    }
+    
+    /* Small Mobile Hours */
+    .hours-card {
+        padding: 1.75rem 1.25rem;
+    }
+    
+    /* Small Mobile Legal */
+    .legal-section {
+        padding: 1.25rem 0.75rem;
+    }
+    
+    .warning-box,
+    .disclaimer-box {
+        padding: 1.25rem 0.75rem;
     }
 }
 
@@ -2005,26 +2199,111 @@ main {
     
     /* Mobile adjustments for hero-style sections */
     .hero-style {
-        min-height: 20vh;
+        min-height: 25vh;
         padding: 0 1rem 2rem;
-        margin-top: var(--nav-hero-gap) !important; /* 6px gap */
-        padding-top: 0 !important; /* Prevent padding from inflating the gap */
-        border-top: 0 !important; /* Avoid phantom lines */
+        margin-top: var(--nav-hero-gap) !important;
+        padding-top: 0 !important;
+        border-top: 0 !important;
     }
     
     .hero-style h1 {
-        font-size: 2.2rem;
+        font-size: clamp(2.2rem, 8vw, 2.8rem);
+        line-height: 1.2;
+        margin-bottom: 1rem;
     }
     
     .hero-style .section-intro {
-        font-size: 1.1rem;
+        font-size: clamp(1rem, 3.5vw, 1.2rem);
+        line-height: 1.5;
+        margin-bottom: 1.5rem;
+    }
+    
+    /* D.E.V.I Page Mobile Optimizations */
+    .devi-hero-v2 {
+        min-height: 60vh;
+        padding: 2rem 1rem;
+    }
+    
+    .devi-hero-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        align-items: center;
+    }
+    
+    .devi-content-left {
+        text-align: center;
+        order: 2;
+    }
+    
+    .devi-content-right {
+        order: 1;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .devi-image-container {
+        max-width: 650px;
+        width: 100%;
+    }
+    
+    .devi-image-container img {
+        width: 100%;
+        height: auto;
+        max-height: 800px;
+        object-fit: cover;
+    }
+    
+    .devi-hero-v2 h1 {
+        font-size: clamp(2.5rem, 10vw, 3.2rem);
+        line-height: 1.1;
+        margin-bottom: 1rem;
+    }
+    
+    .devi-description {
+        font-size: clamp(1rem, 3.5vw, 1.2rem);
+        line-height: 1.5;
+        margin-bottom: 1.5rem;
+    }
+    
+    .devi-bullets {
+        gap: 0.75rem;
+        margin-bottom: 2rem;
+    }
+    
+    .devi-bullets li {
+        font-size: clamp(0.9rem, 3vw, 1rem);
+        padding: 0.75rem 1rem;
+        border-radius: 12px;
+    }
+    
+    .devi-cta-group {
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .devi-cta-group .btn {
+        width: 100%;
+        max-width: 280px;
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+    
+    .devi-helper-text {
+        font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+        margin-bottom: 1rem;
+    }
+    
+    .devi-footnote {
+        font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+        margin-top: 1.5rem;
     }
     
     /* Mobile adjustments for main hero */
     #hero {
-        margin-top: 0 !important; /* No gap for home page - flush with nav */
-        padding-top: 0 !important; /* Prevent padding from inflating the gap */
-        border-top: 0 !important; /* Avoid phantom lines */
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        border-top: 0 !important;
     }
 }
 
@@ -2403,4 +2682,64 @@ footer::before {
     .footer-column ul li a:hover {
         transform: none;
     }
+}
+
+/* Small Mobile D.E.V.I Page */
+.devi-hero-v2 {
+    min-height: 55vh;
+    padding: 1.5rem 0.75rem;
+}
+
+.devi-hero-container {
+    gap: 1.5rem;
+}
+
+.devi-image-container {
+    max-width: 500px;
+}
+
+.devi-image-container img {
+    max-height: 600px;
+}
+
+.devi-hero-v2 h1 {
+    font-size: clamp(2.2rem, 12vw, 2.8rem);
+    margin-bottom: 0.875rem;
+}
+
+.devi-description {
+    font-size: clamp(0.95rem, 4vw, 1.1rem);
+    margin-bottom: 1.25rem;
+}
+
+.devi-bullets {
+    gap: 0.625rem;
+    margin-bottom: 1.75rem;
+}
+
+.devi-bullets li {
+    font-size: clamp(0.85rem, 3.5vw, 0.95rem);
+    padding: 0.625rem 0.875rem;
+    border-radius: 10px;
+}
+
+.devi-cta-group {
+    gap: 0.875rem;
+    margin-bottom: 1.25rem;
+}
+
+.devi-cta-group .btn {
+    max-width: 260px;
+    padding: 0.875rem 1.75rem;
+    font-size: 0.95rem;
+}
+
+.devi-helper-text {
+    font-size: clamp(0.8rem, 3vw, 0.9rem);
+    margin-bottom: 0.875rem;
+}
+
+.devi-footnote {
+    font-size: clamp(0.75rem, 3vw, 0.85rem);
+    margin-top: 1.25rem;
 }
