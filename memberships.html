@@ -62,7 +62,8 @@
         .plan-coming-soon {
             opacity: 0.75;
         }
-        .plan-coming-soon .membership-header {
+        /* Uniform header across all plan cards */
+        .membership.detailed .membership-header {
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
         }
         .plan-coming-soon .btn {
@@ -77,23 +78,6 @@
         .plan-active {
             border: 2px solid #6F63E7 !important;
             box-shadow: 0 8px 32px rgba(111,99,231,0.15);
-        }
-        .plan-active .membership-header {
-            background: linear-gradient(135deg, #6F63E7 0%, #4B3FCC 100%) !important;
-        }
-        .signal-badge {
-            display: inline-block;
-            background: rgba(29,158,117,0.15);
-            border: 1px solid rgba(29,158,117,0.4);
-            color: #1d9e75;
-            font-size: 0.68rem;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            padding: 3px 10px;
-            border-radius: 20px;
-            margin-bottom: 0.75rem;
-            display: block;
         }
         .price-tba {
             font-size: 1rem;
@@ -146,7 +130,6 @@
                     <!-- D.E.V.I Signals -->
                     <div class="membership detailed plan-active">
                         <div class="membership-header">
-                            <span class="signal-badge">● Live Now</span>
                             <h3>D.E.V.I Signals</h3>
                             <div class="price">
                                 <span class="amount">€50</span>
