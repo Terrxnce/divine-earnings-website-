@@ -103,6 +103,28 @@
             padding: 0.5rem 0;
             display: block;
         }
+        /* Card content alignment — push button to bottom */
+        .membership.detailed .membership-content {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .membership.detailed .features-section {
+            flex: 1;
+        }
+        .membership.detailed .ideal-for {
+            margin-top: auto;
+            padding-top: 1.25rem;
+        }
+        .membership.detailed .btn {
+            margin-top: 1.25rem;
+            display: block;
+            text-align: center;
+        }
+        .membership.detailed {
+            display: flex;
+            flex-direction: column;
+        }
     </style>
 
     <main style="padding-top: 6rem;">
@@ -173,12 +195,12 @@
                                     <li><i class="fas fa-check"></i> Conservative, Standard, or Aggressive risk preset</li>
                                     <li><i class="fas fa-check"></i> Master on/off switch</li>
                                     <li><i class="fas fa-check"></i> Live trade and rejection feed</li>
-                                    <li><i class="fas fa-check"></i> Prop firm compliance built in</li>
+                                    <li><i class="fas fa-check"></i> Built-in drawdown and risk controls</li>
                                 </ul>
                             </div>
                             <div class="ideal-for">
                                 <h4>Ideal For:</h4>
-                                <p>Traders who want D.E.V.I to trade their account automatically — prop firm or live.</p>
+                                <p>Traders who want D.E.V.I to trade their MT5 account automatically.</p>
                             </div>
                             <a href="devi.html#waitlist" class="btn btn-primary">Join the Waitlist</a>
                         </div>
@@ -199,7 +221,7 @@
                                     <li><i class="fas fa-check"></i> Everything in D.E.V.I Standard</li>
                                     <li><i class="fas fa-check"></i> Two MT5 accounts simultaneously</li>
                                     <li><i class="fas fa-check"></i> Independent settings per account</li>
-                                    <li><i class="fas fa-check"></i> Manage two prop firm challenges at once</li>
+                                    <li><i class="fas fa-check"></i> Manage two MT5 accounts at once</li>
                                     <li><i class="fas fa-check"></i> Separate dashboard view per account</li>
                                     <li><i class="fas fa-check"></i> Priority support</li>
                                 </ul>
@@ -237,17 +259,17 @@
                             <span class="toggle-icon"><i class="fas fa-plus"></i></span>
                         </div>
                         <div class="faq-answer">
-                            <p>D.E.V.I is currently in live testing on prop firm accounts. Standard and Pro will open to a small beta cohort before full release. Join the waitlist on the D.E.V.I page to be notified.</p>
+                            <p>D.E.V.I is currently in live testing. Standard and Pro will open to a small beta cohort before full release. Join the waitlist on the D.E.V.I page to be notified.</p>
                         </div>
                     </div>
 
                     <div class="faq-item">
                         <div class="faq-question">
-                            <h3>What brokers and prop firms work with D.E.V.I?</h3>
+                            <h3>Does D.E.V.I work with my broker or funded account?</h3>
                             <span class="toggle-icon"><i class="fas fa-plus"></i></span>
                         </div>
                         <div class="faq-answer">
-                            <p>D.E.V.I works with any MT5-compatible broker or prop firm. It has built-in support for FTMO, Blueberry Funded, and other EA-friendly prop firms with drawdown rules enforced at the system level.</p>
+                            <p>D.E.V.I works with any MT5-compatible account. It is your responsibility to confirm that automated trading is permitted under your account's terms and conditions before using D.E.V.I.</p>
                         </div>
                     </div>
 
