@@ -59,12 +59,17 @@
             box-shadow: 0 2px 8px rgba(111,99,231,0.4);
             white-space: nowrap;
         }
-        .plan-coming-soon {
-            opacity: 0.75;
-        }
-        /* Uniform header across all plan cards */
+        /* Uniform purple header across all 3 cards */
         .membership.detailed .membership-header {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            background: linear-gradient(135deg, #6F63E7 0%, #4B3FCC 100%);
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding-bottom: 1.5rem;
+        }
+        .plan-coming-soon {
+            opacity: 0.82;
         }
         .plan-coming-soon .btn {
             background: transparent !important;
@@ -74,40 +79,42 @@
         .plan-coming-soon .btn:hover {
             background: rgba(111,99,231,0.1) !important;
         }
-        /* Active plan highlight */
+        /* Active plan border */
         .plan-active {
             border: 2px solid #6F63E7 !important;
             box-shadow: 0 8px 32px rgba(111,99,231,0.15);
         }
         .price-tba {
-            font-size: 1rem;
-            color: #888;
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.6);
             font-style: italic;
-            font-weight: 500;
-            padding: 0.5rem 0;
+            font-weight: 400;
+            padding: 0.25rem 0;
             display: block;
         }
-        /* Card content alignment — push button to bottom */
+        /* Card layout — align What's Included, Ideal For, and button across all cards */
+        .membership.detailed {
+            display: flex;
+            flex-direction: column;
+        }
         .membership.detailed .membership-content {
             display: flex;
             flex-direction: column;
             flex: 1;
         }
         .membership.detailed .features-section {
-            flex: 1;
+            min-height: 240px;
         }
         .membership.detailed .ideal-for {
-            margin-top: auto;
+            border-top: 1px solid #eee;
             padding-top: 1.25rem;
+            margin-top: 1.5rem;
+            min-height: 100px;
         }
         .membership.detailed .btn {
             margin-top: 1.25rem;
             display: block;
             text-align: center;
-        }
-        .membership.detailed {
-            display: flex;
-            flex-direction: column;
         }
     </style>
 
@@ -164,7 +171,7 @@
                         <div class="plan-ribbon">Coming Soon</div>
                         <div class="membership-header">
                             <h3>D.E.V.I Standard</h3>
-                            <span class="price-tba">Launching soon — join the waitlist</span>
+                            <span class="price-tba">Price to be announced</span>
                             <p class="plan-description">D.E.V.I installs on your Windows machine and trades your MT5 account automatically.</p>
                         </div>
                         <div class="membership-content">
@@ -194,7 +201,7 @@
                         <div class="plan-ribbon">Coming Soon</div>
                         <div class="membership-header">
                             <h3>D.E.V.I Pro</h3>
-                            <span class="price-tba">Launching soon — join the waitlist</span>
+                            <span class="price-tba">Price to be announced</span>
                             <p class="plan-description">Everything in Standard, across two MT5 accounts simultaneously.</p>
                         </div>
                         <div class="membership-content">
@@ -211,7 +218,7 @@
                             </div>
                             <div class="ideal-for">
                                 <h4>Ideal For:</h4>
-                                <p>Traders running multiple prop firm accounts or managing more than one live account.</p>
+                                <p>Traders managing more than one MT5 account simultaneously.</p>
                             </div>
                             <a href="devi.html#waitlist" class="btn btn-primary">Join the Waitlist</a>
                         </div>
