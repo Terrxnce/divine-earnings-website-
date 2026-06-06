@@ -45,49 +45,63 @@
         }
         .plan-ribbon {
             position: absolute;
-            top: 22px;
-            right: -32px;
+            top: 28px;
+            right: -36px;
             background: #6F63E7;
             color: #fff;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             font-weight: 800;
-            letter-spacing: 0.12em;
+            letter-spacing: 0.14em;
             text-transform: uppercase;
-            padding: 6px 44px;
+            padding: 7px 52px;
             transform: rotate(45deg);
             z-index: 10;
-            box-shadow: 0 2px 8px rgba(111,99,231,0.3);
+            box-shadow: 0 2px 8px rgba(111,99,231,0.4);
+            white-space: nowrap;
         }
         .plan-coming-soon {
-            opacity: 0.7;
-            pointer-events: none;
+            opacity: 0.75;
+        }
+        .plan-coming-soon .membership-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
         }
         .plan-coming-soon .btn {
-            background: #333;
-            border-color: #333;
-            cursor: not-allowed;
+            background: transparent !important;
+            border: 1px solid #6F63E7 !important;
+            color: #6F63E7 !important;
         }
-        .plan-type-label {
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.14em;
-            color: #6F63E7;
-            margin-bottom: 0.5rem;
-            display: block;
+        .plan-coming-soon .btn:hover {
+            background: rgba(111,99,231,0.1) !important;
+        }
+        /* Active plan highlight */
+        .plan-active {
+            border: 2px solid #6F63E7 !important;
+            box-shadow: 0 8px 32px rgba(111,99,231,0.15);
+        }
+        .plan-active .membership-header {
+            background: linear-gradient(135deg, #6F63E7 0%, #4B3FCC 100%) !important;
         }
         .signal-badge {
             display: inline-block;
-            background: rgba(111,99,231,0.12);
-            border: 1px solid rgba(111,99,231,0.3);
-            color: #6F63E7;
-            font-size: 0.7rem;
+            background: rgba(29,158,117,0.15);
+            border: 1px solid rgba(29,158,117,0.4);
+            color: #1d9e75;
+            font-size: 0.68rem;
             font-weight: 700;
             letter-spacing: 0.1em;
             text-transform: uppercase;
             padding: 3px 10px;
             border-radius: 20px;
             margin-bottom: 0.75rem;
+            display: block;
+        }
+        .price-tba {
+            font-size: 1rem;
+            color: #888;
+            font-style: italic;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            display: block;
         }
     </style>
 
@@ -108,9 +122,9 @@
                 <div class="membership-container">
 
                     <!-- D.E.V.I Signals -->
-                    <div class="membership standard detailed">
+                    <div class="membership detailed plan-active">
                         <div class="membership-header">
-                            <span class="signal-badge">Available Now</span>
+                            <span class="signal-badge">● Live Now</span>
                             <h3>D.E.V.I Signals</h3>
                             <div class="price">
                                 <span class="amount">€50</span>
@@ -141,14 +155,11 @@
                     </div>
 
                     <!-- D.E.V.I Standard SaaS -->
-                    <div class="membership premium detailed plan-ribbon-wrap plan-coming-soon">
+                    <div class="membership detailed plan-ribbon-wrap plan-coming-soon">
                         <div class="plan-ribbon">Coming Soon</div>
                         <div class="membership-header">
-                            <span class="plan-badge">Most Popular</span>
                             <h3>D.E.V.I Standard</h3>
-                            <div class="price">
-                                <span class="amount" style="font-size:1.5rem; color:#888;">Price TBA</span>
-                            </div>
+                            <span class="price-tba">Launching soon — join the waitlist</span>
                             <p class="plan-description">D.E.V.I installs on your Windows machine and trades your MT5 account automatically.</p>
                         </div>
                         <div class="membership-content">
@@ -174,13 +185,11 @@
                     </div>
 
                     <!-- D.E.V.I Pro SaaS -->
-                    <div class="membership detailed plan-ribbon-wrap plan-coming-soon" style="border: 1px solid rgba(111,99,231,0.3);">
+                    <div class="membership detailed plan-ribbon-wrap plan-coming-soon">
                         <div class="plan-ribbon">Coming Soon</div>
                         <div class="membership-header">
                             <h3>D.E.V.I Pro</h3>
-                            <div class="price">
-                                <span class="amount" style="font-size:1.5rem; color:#888;">Price TBA</span>
-                            </div>
+                            <span class="price-tba">Launching soon — join the waitlist</span>
                             <p class="plan-description">Everything in Standard, across two MT5 accounts simultaneously.</p>
                         </div>
                         <div class="membership-content">
