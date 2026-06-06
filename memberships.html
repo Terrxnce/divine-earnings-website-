@@ -104,16 +104,33 @@
             flex: 1;
         }
         .membership.detailed .features-section {
-            min-height: 300px;
+            min-height: 380px;
         }
         .membership.detailed .ideal-for {
             border-top: 1px solid #eee;
             padding-top: 1.25rem;
             margin-top: 1.5rem;
-            min-height: 100px;
+            min-height: 110px;
+        }
+        .membership.detailed .plan-price-cta {
+            border-top: 1px solid #eee;
+            padding-top: 1.25rem;
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+        .membership.detailed .plan-price-cta .price-line {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #6F63E7;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+        .membership.detailed .plan-price-cta .price-line span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #888;
         }
         .membership.detailed .btn {
-            margin-top: 1.25rem;
             display: block;
             text-align: center;
         }
@@ -139,10 +156,6 @@
                     <div class="membership detailed plan-active">
                         <div class="membership-header">
                             <h3>D.E.V.I Signals</h3>
-                            <div class="price">
-                                <span class="amount">€50</span>
-                                <span class="period">/month</span>
-                            </div>
                             <p class="plan-description">Receive D.E.V.I's trade signals directly. You execute them manually on your own platform.</p>
                         </div>
                         <div class="membership-content">
@@ -162,8 +175,11 @@
                                 <h4>Ideal For:</h4>
                                 <p>Traders who want D.E.V.I's analysis but prefer to execute trades themselves.</p>
                             </div>
-                            <!-- TODO: Replace with D.E.V.I Signals Stripe payment link -->
-                            <a href="https://buy.stripe.com/9AQaGX8Fdf4O68U28a" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Subscribe Now</a>
+                            <div class="plan-price-cta">
+                                <span class="price-line">€50 <span>/month</span></span>
+                                <!-- TODO: Replace with D.E.V.I Signals Stripe payment link -->
+                                <a href="https://buy.stripe.com/9AQaGX8Fdf4O68U28a" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Subscribe Now</a>
+                            </div>
                         </div>
                     </div>
 
@@ -172,7 +188,6 @@
                         <div class="plan-ribbon">Coming Soon</div>
                         <div class="membership-header">
                             <h3>D.E.V.I Standard</h3>
-                            <span class="price-tba">Price to be announced</span>
                             <p class="plan-description">D.E.V.I installs on your Windows machine and trades your MT5 account automatically.</p>
                         </div>
                         <div class="membership-content">
@@ -193,7 +208,10 @@
                                 <h4>Ideal For:</h4>
                                 <p>Traders who want D.E.V.I to trade their MT5 account automatically.</p>
                             </div>
-                            <a href="devi.html#waitlist" class="btn btn-primary">Join the Waitlist</a>
+                            <div class="plan-price-cta">
+                                <span class="price-line" style="color:#aaa; font-size:1rem; font-weight:500;">Price to be announced</span>
+                                <a href="devi.html#waitlist" class="btn btn-primary">Join the Waitlist</a>
+                            </div>
                         </div>
                     </div>
 
@@ -202,7 +220,6 @@
                         <div class="plan-ribbon">Coming Soon</div>
                         <div class="membership-header">
                             <h3>D.E.V.I Pro</h3>
-                            <span class="price-tba">Price to be announced</span>
                             <p class="plan-description">Everything in Standard, across two MT5 accounts simultaneously.</p>
                         </div>
                         <div class="membership-content">
@@ -221,7 +238,10 @@
                                 <h4>Ideal For:</h4>
                                 <p>Traders managing more than one MT5 account simultaneously.</p>
                             </div>
-                            <a href="devi.html#waitlist" class="btn btn-primary">Join the Waitlist</a>
+                            <div class="plan-price-cta">
+                                <span class="price-line" style="color:#aaa; font-size:1rem; font-weight:500;">Price to be announced</span>
+                                <a href="devi.html#waitlist" class="btn btn-primary">Join the Waitlist</a>
+                            </div>
                         </div>
                     </div>
 
