@@ -37,138 +37,172 @@
     </header>
 
     <!-- Main Content -->
+    <style>
+        /* Coming Soon Ribbon */
+        .plan-ribbon-wrap {
+            position: relative;
+            overflow: hidden;
+        }
+        .plan-ribbon {
+            position: absolute;
+            top: 22px;
+            right: -32px;
+            background: #6F63E7;
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 6px 44px;
+            transform: rotate(45deg);
+            z-index: 10;
+            box-shadow: 0 2px 8px rgba(111,99,231,0.3);
+        }
+        .plan-coming-soon {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+        .plan-coming-soon .btn {
+            background: #333;
+            border-color: #333;
+            cursor: not-allowed;
+        }
+        .plan-type-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: #6F63E7;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .signal-badge {
+            display: inline-block;
+            background: rgba(111,99,231,0.12);
+            border: 1px solid rgba(111,99,231,0.3);
+            color: #6F63E7;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-bottom: 0.75rem;
+        }
+    </style>
+
     <main style="padding-top: 6rem;">
         <!-- Membership Hero Section -->
         <section id="membership-hero" class="scroll-animate hero-style">
             <canvas id="membership-hero-canvas" class="hero-background"></canvas>
             <div class="hero-overlay"></div>
             <div class="section-container">
-                <h1>Choose Your Trading Plan</h1>
-                <p class="section-intro">Select the membership that aligns with your trading goals and experience level. All plans include our money-back guarantee.</p>
+                <h1>D.E.V.I Products</h1>
+                <p class="section-intro">Three ways to trade with D.E.V.I — from receiving its signals manually, to letting it trade your account automatically.</p>
             </div>
         </section>
 
-        <!-- Detailed Membership Plans -->
+        <!-- Plans -->
         <section id="detailed-memberships" class="scroll-animate">
             <div class="section-container">
                 <div class="membership-container">
-                    <!-- Standard Membership -->
+
+                    <!-- D.E.V.I Signals -->
                     <div class="membership standard detailed">
                         <div class="membership-header">
-                            <h3>Standard Membership</h3>
+                            <span class="signal-badge">Available Now</span>
+                            <h3>D.E.V.I Signals</h3>
                             <div class="price">
-                                <span class="amount">€45</span>
+                                <span class="amount">€50</span>
                                 <span class="period">/month</span>
                             </div>
-                            <p class="plan-description">For active traders ready to engage with daily forex signals</p>
+                            <p class="plan-description">Receive D.E.V.I's trade signals directly. You execute them manually on your own platform.</p>
                         </div>
                         <div class="membership-content">
                             <div class="features-section">
                                 <h4>What's Included:</h4>
                                 <ul>
-                                    <li><i class="fas fa-check"></i> 1-2 daily forex signals</li>
-                                    <li><i class="fas fa-check"></i> Step-by-step video tutorials</li>
-                                    <li><i class="fas fa-check"></i> Signal explanation and reasoning</li>
-                                    <li><i class="fas fa-check"></i> Members-only community chat</li>
-                                    <li><i class="fas fa-check"></i> Basic trading education materials</li>
-                                    <li><i class="fas fa-check"></i> Market analysis updates</li>
-                                    <li><i class="fas fa-check"></i> Discord support</li>
-                                    <li><i class="fas fa-check"></i> Risk management guidance</li>
+                                    <li><i class="fas fa-check"></i> D.E.V.I signals delivered via Discord</li>
+                                    <li><i class="fas fa-check"></i> Symbol, direction, entry zone</li>
+                                    <li><i class="fas fa-check"></i> Stop loss and take profit levels</li>
+                                    <li><i class="fas fa-check"></i> Risk/reward ratio on every signal</li>
+                                    <li><i class="fas fa-check"></i> Setup type and reasoning included</li>
+                                    <li><i class="fas fa-check"></i> Members-only Discord channel</li>
+                                    <li><i class="fas fa-check"></i> Structure-based, not guesswork</li>
                                 </ul>
                             </div>
                             <div class="ideal-for">
                                 <h4>Ideal For:</h4>
-                                <p>Active traders, forex enthusiasts, those wanting daily guidance</p>
+                                <p>Traders who want D.E.V.I's analysis but prefer to execute trades themselves.</p>
                             </div>
-                            <a href="https://buy.stripe.com/9AQcP56x5bSC0OAfZ1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Subscribe Now</a>
-                        </div>
-                    </div>
-
-                    <!-- Premium Membership -->
-                    <div class="membership premium detailed">
-                        <div class="membership-header">
-                            <span class="plan-badge">Best Value</span>
-                            <span class="badge-devi">Powered by D.E.V.I</span>
-                            <h3>Premium Membership</h3>
-                            <div class="price">
-                                <span class="amount">€60</span>
-                                <span class="period">/month</span>
-                            </div>
-                            <p class="plan-description">Complete trading education with premium signals and personal mentorship</p>
-                        </div>
-                        <div class="membership-content">
-                            <div class="features-section">
-                                <h4>What's Included:</h4>
-                                <ul>
-                                    <li><i class="fas fa-check"></i> 2-4 daily high-quality forex signals</li>
-                                    <li><i class="fas fa-check"></i> Advanced learning materials & courses</li>
-                                    <li><i class="fas fa-check"></i> Bi-weekly mentorship calls</li>
-                                    <li><i class="fas fa-check"></i> Premium trader chat group</li>
-                                    <li><i class="fas fa-check"></i> Direct access to expert traders</li>
-                                    <li><i class="fas fa-check"></i> Advanced market analysis</li>
-                                    <li><i class="fas fa-check"></i> Weekly strategy sessions</li>
-                                    <li><i class="fas fa-check"></i> Priority support</li>
-                                    <li><i class="fas fa-check"></i> Exclusive trading tools</li>
-                                    <li><i class="fas fa-check"></i> Personal portfolio review</li>
-                                </ul>
-                            </div>
-                            <div class="ideal-for">
-                                <h4>Ideal For:</h4>
-                                <p>Serious traders, those wanting mentorship, advanced strategy learners</p>
-                            </div>
+                            <!-- TODO: Replace with D.E.V.I Signals Stripe payment link -->
                             <a href="https://buy.stripe.com/9AQaGX8Fdf4O68U28a" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Subscribe Now</a>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Comparison Table -->
-        <section id="comparison-table" class="scroll-animate">
-            <div class="section-container">
-                <h2>Plan Comparison</h2>
-                <div class="comparison-wrapper">
-                    <table class="comparison-table">
-                        <thead>
-                            <tr>
-                                <th>Features</th>
-                                <th>Standard<br><span class="price-small">€45/mo</span></th>
-                                <th>Premium<br><span class="price-small">€60/mo</span></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Daily Forex Signals</td>
-                                <td>1-2 signals</td>
-                                <td>2-4 signals</td>
-                            </tr>
-                            <tr>
-                                <td>Video Tutorials</td>
-                                <td><i class="fas fa-check text-green"></i></td>
-                                <td>Advanced</td>
-                            </tr>
-                            <tr>
-                                <td>Community Chat</td>
-                                <td><i class="fas fa-check text-green"></i></td>
-                                <td>Premium Group</td>
-                            </tr>
-                            <tr>
-                                <td>Mentorship Calls</td>
-                                <td><i class="fas fa-times text-gray"></i></td>
-                                <td>Bi-weekly</td>
-                            </tr>
-                            <tr>
-                                <td>Support Level</td>
-                                <td>Discord</td>
-                                <td>Priority</td>
-                            </tr>
-                            <tr>
-                                <td>Money-back Guarantee</td>
-                                <td><i class="fas fa-check text-green"></i></td>
-                                <td><i class="fas fa-check text-green"></i></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <!-- D.E.V.I Standard SaaS -->
+                    <div class="membership premium detailed plan-ribbon-wrap plan-coming-soon">
+                        <div class="plan-ribbon">Coming Soon</div>
+                        <div class="membership-header">
+                            <span class="plan-badge">Most Popular</span>
+                            <h3>D.E.V.I Standard</h3>
+                            <div class="price">
+                                <span class="amount" style="font-size:1.5rem; color:#888;">Price TBA</span>
+                            </div>
+                            <p class="plan-description">D.E.V.I installs on your Windows machine and trades your MT5 account automatically.</p>
+                        </div>
+                        <div class="membership-content">
+                            <div class="features-section">
+                                <h4>What's Included:</h4>
+                                <ul>
+                                    <li><i class="fas fa-check"></i> D.E.V.I runs on your machine</li>
+                                    <li><i class="fas fa-check"></i> One MT5 account</li>
+                                    <li><i class="fas fa-check"></i> All supported pairs and sessions</li>
+                                    <li><i class="fas fa-check"></i> Full web dashboard on any device</li>
+                                    <li><i class="fas fa-check"></i> Conservative, Standard, or Aggressive risk preset</li>
+                                    <li><i class="fas fa-check"></i> Master on/off switch</li>
+                                    <li><i class="fas fa-check"></i> Live trade and rejection feed</li>
+                                    <li><i class="fas fa-check"></i> Prop firm compliance built in</li>
+                                </ul>
+                            </div>
+                            <div class="ideal-for">
+                                <h4>Ideal For:</h4>
+                                <p>Traders who want D.E.V.I to trade their account automatically — prop firm or live.</p>
+                            </div>
+                            <a href="devi.html#waitlist" class="btn btn-primary">Join the Waitlist</a>
+                        </div>
+                    </div>
+
+                    <!-- D.E.V.I Pro SaaS -->
+                    <div class="membership detailed plan-ribbon-wrap plan-coming-soon" style="border: 1px solid rgba(111,99,231,0.3);">
+                        <div class="plan-ribbon">Coming Soon</div>
+                        <div class="membership-header">
+                            <h3>D.E.V.I Pro</h3>
+                            <div class="price">
+                                <span class="amount" style="font-size:1.5rem; color:#888;">Price TBA</span>
+                            </div>
+                            <p class="plan-description">Everything in Standard, across two MT5 accounts simultaneously.</p>
+                        </div>
+                        <div class="membership-content">
+                            <div class="features-section">
+                                <h4>What's Included:</h4>
+                                <ul>
+                                    <li><i class="fas fa-check"></i> Everything in D.E.V.I Standard</li>
+                                    <li><i class="fas fa-check"></i> Two MT5 accounts simultaneously</li>
+                                    <li><i class="fas fa-check"></i> Independent settings per account</li>
+                                    <li><i class="fas fa-check"></i> Manage two prop firm challenges at once</li>
+                                    <li><i class="fas fa-check"></i> Separate dashboard view per account</li>
+                                    <li><i class="fas fa-check"></i> Priority support</li>
+                                </ul>
+                            </div>
+                            <div class="ideal-for">
+                                <h4>Ideal For:</h4>
+                                <p>Traders running multiple prop firm accounts or managing more than one live account.</p>
+                            </div>
+                            <a href="devi.html#waitlist" class="btn btn-primary">Join the Waitlist</a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -176,15 +210,45 @@
         <!-- FAQ Section -->
         <section id="membership-faq" class="scroll-animate">
             <div class="section-container">
-                <h2>Membership FAQ</h2>
+                <h2>FAQ</h2>
                 <div class="faq-container">
                     <div class="faq-item">
                         <div class="faq-question">
-                            <h3>Can I upgrade or downgrade my membership?</h3>
+                            <h3>What's the difference between Signals and Standard?</h3>
                             <span class="toggle-icon"><i class="fas fa-plus"></i></span>
                         </div>
                         <div class="faq-answer">
-                            <p>Yes! You can upgrade or downgrade your membership at any time through your client portal. Changes take effect at the next billing cycle.</p>
+                            <p>With Signals, D.E.V.I sends you its trade setups via Discord and you place the trades yourself. With Standard and Pro, D.E.V.I installs on your machine and places the trades automatically through your MT5 account — no manual input needed.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>When will Standard and Pro be available?</h3>
+                            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>D.E.V.I is currently in live testing on prop firm accounts. Standard and Pro will open to a small beta cohort before full release. Join the waitlist on the D.E.V.I page to be notified.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What brokers and prop firms work with D.E.V.I?</h3>
+                            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>D.E.V.I works with any MT5-compatible broker or prop firm. It has built-in support for FTMO, Blueberry Funded, and other EA-friendly prop firms with drawdown rules enforced at the system level.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Can I cancel anytime?</h3>
+                            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes. No long-term contracts. Cancel through the client portal at any time with no cancellation fees.</p>
                         </div>
                     </div>
 
@@ -194,37 +258,7 @@
                             <span class="toggle-icon"><i class="fas fa-plus"></i></span>
                         </div>
                         <div class="faq-answer">
-                            <p>We accept all major credit cards, debit cards, and bank transfers through our secure Stripe payment system.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>Is there a contract or can I cancel anytime?</h3>
-                            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>There are no long-term contracts. You can cancel your subscription at any time through your client portal with no cancellation fees.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>Do you offer refunds?</h3>
-                            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Yes, we offer a 7-day money-back guarantee for all new members. If you're not satisfied within the first 7 days, we'll provide a full refund.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>How quickly will I receive access after subscribing?</h3>
-                            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Access is granted immediately after payment confirmation. You'll receive welcome instructions and chat group invitations within minutes of subscribing.</p>
+                            <p>All major credit and debit cards through Stripe. Secure checkout, no card details stored on our servers.</p>
                         </div>
                     </div>
                 </div>
@@ -234,11 +268,11 @@
         <!-- CTA Section -->
         <section id="membership-cta" class="scroll-animate">
             <div class="cta-container">
-                <h2>Ready to Start Your Trading Journey?</h2>
-                <p>Join thousands of traders who are building wealth with Divine Earnings</p>
+                <h2>Start trading with D.E.V.I</h2>
+                <p>Join the Signals plan now or get on the waitlist for full automation.</p>
                 <div class="cta-buttons">
-                    <a href="https://buy.stripe.com/9AQcP56x5bSC0OAfZ1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Get Started - €45/mo</a>
-                    <a href="contact.html" class="btn btn-secondary">Have Questions? Contact Us</a>
+                    <a href="https://buy.stripe.com/9AQaGX8Fdf4O68U28a" target="_blank" rel="noopener noreferrer" class="btn btn-primary">D.E.V.I Signals — €50/mo</a>
+                    <a href="devi.html#waitlist" class="btn btn-secondary">Join the Waitlist</a>
                 </div>
             </div>
         </section>
