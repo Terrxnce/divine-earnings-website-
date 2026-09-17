@@ -4,370 +4,360 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Divine Earnings | Trading & Investment Education</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./assets/css/components/devi_banner.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Add favicon -->
+    <meta name="description" content="Divine Earnings helps you grow with wisdom: clear trading education, a real community, and structured signals powered by D.E.V.I.">
+    <meta name="theme-color" content="#0A0A0F">
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header with Fixed Navigation -->
     <header id="top-header">
         <div class="header-container">
-            <div class="logo">
-                <img src="images/Logo.png" alt="Divine Earnings Logo">
-            </div>
-            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
-                <span></span>
-                <span></span>
-                <span></span>
+            <a href="index.html" class="logo" aria-label="Divine Earnings home">
+                <img src="images/logo-mark.png" alt="" width="256" height="256">
+                <span class="wordmark">Divine Earnings</span>
+            </a>
+            <button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-navigation">
+                <span></span><span></span><span></span>
             </button>
-            <nav id="main-navigation">
+            <nav id="main-navigation" aria-label="Main navigation">
                 <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="index.html" class="active" aria-current="page">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="memberships.html">Memberships</a></li>
                     <li><a href="devi.html">D.E.V.I</a></li>
                     <li><a href="contact.html">Contact</a></li>
-
                     <li><a href="https://billing.stripe.com/p/login/dR65lDf1Dgqu4y4bII" target="_blank" rel="noopener noreferrer" class="nav-button">Client Portal</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="hero">
-        <canvas id="hero-canvas" class="hero-background"></canvas>
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="fade-in">Where wisdom meets wealth</h1>
-            <div class="hero-subtitle fade-in delay-1">
-                <p class="subtitle-main">Divine Earnings helps you grow with wisdom.</p>
-                <div class="subtitle-separator"></div>
-                <p class="subtitle-secondary">Clear education, real community, and structured signals.</p>
-            </div>
-            <div class="hero-cta fade-in delay-2">
-                <a href="memberships.html" class="btn btn-primary" aria-label="View our membership options">View Memberships</a>
-                <a href="devi.html#waitlist" class="btn btn-secondary" aria-label="Join the D.E.V.I waitlist">Join D.E.V.I Waitlist</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- D.E.V.I Feature Section -->
-    <section class="devi-feature reveal" aria-labelledby="devi-title">
-        <div class="devi-feature__inner">
-            <div class="devi-feature__copy">
-                <p class="eyebrow">Introducing</p>
-                <h2 id="devi-title">Meet D.E.V.I — our virtual intelligence for smarter trades</h2>
-                <p class="lead">
-                    D.E.V.I reads institutional market structure, scores confluence across multiple detectors, and only acts when conditions align. Precision over noise.
-                </p>
-
-                <ul class="devi-feature__grid">
-                    <li><span class="ico" aria-hidden="true">📊</span><strong>Structure scoring</strong><small>OB, FVG, BOS, engulfing, EMA trend.</small></li>
-                    <li><span class="ico" aria-hidden="true">🔒</span><strong>Confluence gates</strong><small>Multi-timeframe validation before entry.</small></li>
-                    <li><span class="ico" aria-hidden="true">⏱️</span><strong>Session aware</strong><small>London and NY windows with guards.</small></li>
-                    <li><span class="ico" aria-hidden="true">🔐</span><strong>Risk guarded</strong><small>Score gates, RRR checks, drawdown limits.</small></li>
-                </ul>
-
-                                        <a href="devi.html" class="btn-devi-cta">Learn more about D.E.V.I</a>
-            </div>
-
-            <div class="devi-feature__visual" aria-hidden="true">
-                <div class="devi-orb">
-                    <div class="devi-glow"></div>
-                    <div class="devi-eye"></div>
+    <main>
+        <!-- Hero -->
+        <section id="hero" aria-labelledby="hero-title">
+            <canvas id="hero-canvas" class="hero-background" aria-hidden="true"></canvas>
+            <div class="hero-overlay" aria-hidden="true"></div>
+            <div class="section-container hero-wrap">
+                <div class="hero-content">
+                    <h1 id="hero-title" class="fade-in">Where wisdom meets wealth</h1>
+                    <p class="subtitle-main fade-in delay-1">Divine Earnings helps you grow with wisdom. Clear education, real community, and structured signals.</p>
+                    <div class="hero-cta fade-in delay-2">
+                        <a href="memberships.html" class="btn btn-primary">View Memberships</a>
+                        <a href="devi.html#waitlist" class="btn btn-secondary">Join the D.E.V.I Waitlist</a>
+                    </div>
+                    <ul class="hero-meta fade-in delay-3" aria-label="At a glance">
+                        <li>32 instruments on MT5</li>
+                        <li>Hard stop in every order</li>
+                        <li>Flat by session end</li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Main Content Area -->
-    <main>
-        <!-- Value Proposition Section -->
-        <section id="value-proposition" class="scroll-animate">
-            <div class="section-container">
-                <h2>Why Choose Divine Earnings</h2>
-                <div class="value-cards">
-                    <div class="value-card">
-                        <div class="icon-container">
-                            <i class="fas fa-chart-line"></i>
+        <!-- D.E.V.I feature -->
+        <section class="devi-feature" aria-labelledby="devi-title">
+            <div class="section-container devi-feature__inner">
+                <div class="devi-feature__copy">
+                    <h2 id="devi-title">Meet D.E.V.I, the engine behind every signal</h2>
+                    <p class="lead">D.E.V.I reads institutional market structure, scores confluence across multiple detectors, and only acts when every gate passes. Most of the roughly 2,200 setups it evaluates each day are rejected. Precision over noise.</p>
+
+                    <ul class="devi-feature__grid">
+                        <li>
+                            <i class="ico fas fa-chart-bar" aria-hidden="true"></i>
+                            <strong>Structure detection</strong>
+                            <small>Order blocks, breaks of structure, fair value gaps and liquidity sweeps on M15, with H1 trend and H4 context.</small>
+                        </li>
+                        <li>
+                            <i class="ico fas fa-check-double" aria-hidden="true"></i>
+                            <strong>Confirmation first</strong>
+                            <small>No entry on proximity alone. The zone must prove it is reacting with a change of character on the retest.</small>
+                        </li>
+                        <li>
+                            <i class="ico fas fa-layer-group" aria-hidden="true"></i>
+                            <strong>Gate stack</strong>
+                            <small>H1 trend, volatility, news blackout, session proximity and spread. Any failure is a hold with a coded reason.</small>
+                        </li>
+                        <li>
+                            <i class="ico fas fa-shield-alt" aria-hidden="true"></i>
+                            <strong>Risk by design</strong>
+                            <small>1% per trade, seven positions max, daily loss blocks, and a hard stop inside every order it sends.</small>
+                        </li>
+                    </ul>
+
+                    <a href="devi.html" class="btn btn-primary">Learn more about D.E.V.I</a>
+                </div>
+
+                <div class="devi-feature__visual">
+                    <div class="panel feed-panel" role="group" aria-label="Illustrative D.E.V.I decision feed">
+                        <header class="panel__head">
+                            <span class="panel__title">
+                                <span class="status-dot" aria-hidden="true"></span>
+                                Decision feed &middot; UTC
+                            </span>
+                            <span class="tag">Illustrative</span>
+                        </header>
+                        <ul class="feed">
+                            <li>
+                                <time>07:15</time>
+                                <span class="pair">GBPUSD</span>
+                                <span class="dir">Hold</span>
+                                <span class="status status--rej">Rejected</span>
+                                <span class="note">H1 trend neutral</span>
+                            </li>
+                            <li>
+                                <time>08:30</time>
+                                <span class="pair">EURUSD</span>
+                                <span class="dir dir--long">Long</span>
+                                <span class="status status--ok">Executed</span>
+                                <span class="note">OB + BOS &middot; CHoCH confirmed &middot; RR 2.4</span>
+                            </li>
+                            <li>
+                                <time>09:45</time>
+                                <span class="pair">XAUUSD</span>
+                                <span class="dir">Hold</span>
+                                <span class="status status--rej">Rejected</span>
+                                <span class="note">Spread 12% of risk, above 10% cap</span>
+                            </li>
+                            <li>
+                                <time>13:00</time>
+                                <span class="pair">US100</span>
+                                <span class="dir">Hold</span>
+                                <span class="status status--rej">Rejected</span>
+                                <span class="note">News blackout, high-impact event in 30 min</span>
+                            </li>
+                            <li>
+                                <time>13:45</time>
+                                <span class="pair">USDJPY</span>
+                                <span class="dir dir--short">Short</span>
+                                <span class="status status--ok">Executed</span>
+                                <span class="note">OB + BOS &middot; CHoCH confirmed &middot; RR 1.9</span>
+                            </li>
+                            <li>
+                                <time>15:10</time>
+                                <span class="pair">AUDUSD</span>
+                                <span class="dir">Hold</span>
+                                <span class="status status--rej">Rejected</span>
+                                <span class="note">Under 60 min to session close</span>
+                            </li>
+                        </ul>
+                        <div class="feed__summary">
+                            <span>Evaluated <strong>~2,200</strong>/day</span>
+                            <span>Min RR <strong>1.2</strong></span>
+                            <span>Risk <strong>1%</strong>/trade</span>
+                            <span>Sessions <strong>Asia &middot; London &middot; NY</strong></span>
                         </div>
-                        <h3>Expert Analysis</h3>
-                        <p>Gain access to professional trade signals backed by extensive market analysis and experience</p>
-                    </div>
-                    <div class="value-card">
-                        <div class="icon-container">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <h3>Trading Education</h3>
-                        <p>Learn strategies and techniques that will empower you to make smarter trading decisions</p>
-                    </div>
-                    <div class="value-card">
-                        <div class="icon-container">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3>Community Support</h3>
-                        <p>Join a supportive community of like-minded traders on their journey to financial freedom</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- "Who We Are" Section -->
-        <section id="who-we-are" class="scroll-animate">
+        <!-- Why choose -->
+
+        <!-- Who we are -->
+        <section id="who-we-are" class="band-alt reveal" aria-labelledby="who-title">
             <div class="section-container">
                 <div class="two-column">
                     <div class="content-column">
-                        <h2>Who We Are</h2>
-                        <p class="highlight">
-                            At Divine Earnings, we are a passionate team of traders and educators dedicated to empowering individuals to unlock their financial potential through trading.
-                        </p>
-                        <p>
-                            Guided by the wisdom of James 1:5, we believe that with the right knowledge and support, anyone can achieve financial independence.
-                        </p>
-                        <p>
-                            Our mission is to empower people with the knowledge, tools, and systems they need to grow financially — combining technology, education, and community to make wealth accessible in an evolving world.	
-                        </p>
-                        <a href="about.html" class="btn">Learn More About Us</a>
+                        <h2 id="who-title">Who we are</h2>
+                        <p class="highlight">At Divine Earnings, we are a passionate team of traders and educators dedicated to empowering individuals to unlock their financial potential through trading.</p>
+                        <p>Guided by the wisdom of James 1:5, we believe that with the right knowledge and support, anyone can learn to trade with discipline.</p>
+                        <p>Our mission is to empower people with the knowledge, tools, and systems they need to grow financially — combining technology, education, and community to make wealth accessible in an evolving world.</p>
+                        <a href="about.html" class="btn btn-secondary">Learn more about us</a>
                     </div>
                     <div class="image-column">
                         <div class="image-container">
-                            <img src="images/Logo.png" alt="Divine Earnings Logo">
+                            <img src="images/logo-mark.png" alt="Divine Earnings logo" width="256" height="256" loading="lazy">
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Membership Overview Section -->
-        <section id="membership-options" class="scroll-animate">
+        <!-- Products -->
+        <section id="membership-options" class="reveal" aria-labelledby="products-title">
             <div class="section-container">
-                <h2>D.E.V.I Products</h2>
-                <p class="section-intro">Three ways to trade with D.E.V.I — from receiving signals manually, to full automation on your MT5 account.</p>
-
-                <div class="membership-container">
-                    <div class="membership standard">
-                        <div class="membership-header">
-                            <span class="plan-badge">Available Now</span>
-                            <h3>D.E.V.I Signals</h3>
-                            <div class="price">
-                                <span class="amount">€50</span>
-                                <span class="period">/month</span>
-                            </div>
-                        </div>
-                        <div class="membership-content">
-                            <p class="membership-description">D.E.V.I's trade setups delivered to your Discord. You execute manually.</p>
-                            <ul>
-                                <li><i class="fas fa-check"></i> Structure-based signals via Discord</li>
-                                <li><i class="fas fa-check"></i> Entry, SL, TP and RR on every signal</li>
-                                <li><i class="fas fa-check"></i> Setup type and reasoning included</li>
-                                <li><i class="fas fa-check"></i> Members-only channel</li>
-                            </ul>
-                            <a href="https://buy.stripe.com/9AQaGX8Fdf4O68U28a" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Subscribe Now</a>
-                        </div>
-                    </div>
-
-                    <div class="membership premium" style="position:relative; overflow:hidden;">
-                        <div style="position:absolute; top:28px; right:-36px; background:#6F63E7; color:#fff; font-size:0.65rem; font-weight:800; letter-spacing:0.14em; text-transform:uppercase; padding:7px 52px; transform:rotate(45deg); z-index:10; white-space:nowrap;">Coming Soon</div>
-                        <div class="membership-header">
-                            <h3>D.E.V.I Standard</h3>
-                            <p style="color:#888; font-style:italic; font-size:0.9rem; margin:0.25rem 0 0;">Launching soon</p>
-                        </div>
-                        <div class="membership-content">
-                            <p class="membership-description">D.E.V.I runs on your machine and trades your MT5 account automatically.</p>
-                            <ul>
-                                <li><i class="fas fa-check"></i> Full automation on one MT5 account</li>
-                                <li><i class="fas fa-check"></i> Web dashboard on any device</li>
-                                <li><i class="fas fa-check"></i> Prop firm compliance built in</li>
-                                <li><i class="fas fa-check"></i> Risk preset and pair controls</li>
-                            </ul>
-                            <a href="devi.html#waitlist" class="btn btn-primary">Join Waitlist</a>
-                        </div>
-                    </div>
-
-                    <div class="membership" style="position:relative; overflow:hidden; border:1px solid rgba(111,99,231,0.3);">
-                        <div style="position:absolute; top:28px; right:-36px; background:#6F63E7; color:#fff; font-size:0.65rem; font-weight:800; letter-spacing:0.14em; text-transform:uppercase; padding:7px 52px; transform:rotate(45deg); z-index:10; white-space:nowrap;">Coming Soon</div>
-                        <div class="membership-header">
-                            <h3>D.E.V.I Pro</h3>
-                            <p style="color:#888; font-style:italic; font-size:0.9rem; margin:0.25rem 0 0;">Launching soon</p>
-                        </div>
-                        <div class="membership-content">
-                            <p class="membership-description">Everything in Standard across two MT5 accounts simultaneously.</p>
-                            <ul>
-                                <li><i class="fas fa-check"></i> Two MT5 accounts simultaneously</li>
-                                <li><i class="fas fa-check"></i> Independent settings per account</li>
-                                <li><i class="fas fa-check"></i> Run two prop challenges at once</li>
-                                <li><i class="fas fa-check"></i> Priority support</li>
-                            </ul>
-                            <a href="devi.html#waitlist" class="btn btn-primary">Join Waitlist</a>
-                        </div>
-                    </div>
+                <div class="section-head section-head--center">
+                    <h2 id="products-title">D.E.V.I Products</h2>
+                    <p class="section-intro">One plan you can start today. Full automation on your MT5 account is on the waitlist.</p>
                 </div>
 
-                <div class="membership-footnote">
-                    <p>View our <a href="terms.html">terms and conditions</a> for full details.</p>
+                <div class="plans">
+                    <article class="plan plan--active" aria-labelledby="plan-signals">
+                        <div class="plan__head">
+                            <span class="plan__status plan__status--live">Available now</span>
+                            <h3 class="plan__name" id="plan-signals">D.E.V.I Signals</h3>
+                            <p class="plan__desc">D.E.V.I's trade setups delivered to your Discord. You execute manually.</p>
+                        </div>
+                        <div class="plan__body">
+                            <ul class="plan__features">
+                                <li><i class="fas fa-check" aria-hidden="true"></i>Structure-based signals via Discord</li>
+                                <li><i class="fas fa-check" aria-hidden="true"></i>Entry, SL, TP and RR on every signal</li>
+                                <li><i class="fas fa-check" aria-hidden="true"></i>Setup type and reasoning included</li>
+                                <li><i class="fas fa-check" aria-hidden="true"></i>Members-only channel</li>
+                            </ul>
+                        </div>
+                        <div class="plan__cta">
+                            <p class="plan__price">€50 <span class="period">/ month</span></p>
+                            <a href="https://buy.stripe.com/9AQaGX8Fdf4O68U28a" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Subscribe now</a>
+                        </div>
+                    </article>
+
+                    <article class="plan" aria-labelledby="plan-standard">
+                        <div class="plan__head">
+                            <span class="plan__status">Coming soon</span>
+                            <h3 class="plan__name" id="plan-standard">D.E.V.I Standard</h3>
+                            <p class="plan__desc">D.E.V.I runs on your machine and trades your MT5 account automatically.</p>
+                        </div>
+                        <div class="plan__body">
+                            <ul class="plan__features">
+                                <li><i class="fas fa-check" aria-hidden="true"></i>Full automation on one MT5 account</li>
+                                <li><i class="fas fa-check" aria-hidden="true"></i>Web dashboard on any device</li>
+                                <li><i class="fas fa-check" aria-hidden="true"></i>Prop firm compliance built in</li>
+                                <li><i class="fas fa-check" aria-hidden="true"></i>Risk preset and pair controls</li>
+                            </ul>
+                        </div>
+                        <div class="plan__cta">
+                            <p class="plan__price plan__price--tba">Price to be announced</p>
+                            <a href="devi.html#waitlist" class="btn btn-secondary">Join the waitlist</a>
+                        </div>
+                    </article>
+
+                    <article class="plan" aria-labelledby="plan-pro">
+                        <div class="plan__head">
+                            <span class="plan__status">Coming soon</span>
+                            <h3 class="plan__name" id="plan-pro">D.E.V.I Pro</h3>
+                            <p class="plan__desc">Everything in Standard, across two MT5 accounts.</p>
+                        </div>
+                        <div class="plan__body">
+                            <ul class="plan__features">
+                                <li><i class="fas fa-check" aria-hidden="true"></i>Two accounts, run at the same time</li>
+                                <li><i class="fas fa-check" aria-hidden="true"></i>Independent settings per account</li>
+                                <li><i class="fas fa-check" aria-hidden="true"></i>Run two prop challenges at once</li>
+                                <li><i class="fas fa-check" aria-hidden="true"></i>Priority support</li>
+                            </ul>
+                        </div>
+                        <div class="plan__cta">
+                            <p class="plan__price plan__price--tba">Price to be announced</p>
+                            <a href="devi.html#waitlist" class="btn btn-secondary">Join the waitlist</a>
+                        </div>
+                    </article>
                 </div>
+
+                <p class="membership-footnote">View our <a href="terms.html">terms and conditions</a> for full details.</p>
             </div>
         </section>
 
-        <!-- Testimonials Section -->
-        <section id="testimonials" class="scroll-animate">
-            <div class="section-container">
-                <h2>What Our Members Say</h2>
-                <div class="testimonial-slider">
-                    <div class="testimonial-slide">
-                        <div class="testimonial-content">
-                            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-                            <p>"Divine Earnings has completely transformed my approach to trading. The signals are accurate and the community support is incredible."</p>
-                            <div class="testimonial-author">
-                                <div class="author-info">
-                                    <h4>James K.</h4>
-                                    <p>Premium Member, 8 months</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-slide">
-                        <div class="testimonial-content">
-                            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-                            <p>"As a beginner, I was nervous about investing, but the Kickstart Portfolio plan gave me the confidence to start building wealth systematically."</p>
-                            <div class="testimonial-author">
-                                <div class="author-info">
-                                    <h4>Maria L.</h4>
-                                    <p>Kickstart Member, 4 months</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Testimonial navigation dots would go here -->
-                <div class="testimonial-dots">
-                    <span class="dot active"></span>
-                    <span class="dot"></span>
-                </div>
-            </div>
-        </section>
+        <!-- Testimonials -->
 
-        <!-- FAQ Section -->
-        <section id="faq" class="scroll-animate">
+        <!-- FAQ -->
+        <section id="faq" class="reveal" aria-labelledby="faq-title">
             <div class="section-container">
-                <h2>Frequently Asked Questions</h2>
+                <div class="section-head section-head--center">
+                    <h2 id="faq-title">Frequently asked questions</h2>
+                </div>
                 <div class="faq-container">
                     <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>How do I access the trading signals?</h3>
-                            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>After subscribing, you'll receive access to our members-only chat groups where signals are posted daily. You'll also receive detailed instructions on how to follow these signals.</p>
+                        <h3><button class="faq-question" type="button" id="faq-1-btn" aria-expanded="false" aria-controls="faq-1">How do I access the trading signals?<span class="toggle-icon" aria-hidden="true"><i class="fas fa-plus"></i></span></button></h3>
+                        <div class="faq-answer" id="faq-1" role="region" aria-labelledby="faq-1-btn">
+                            <div><p>After subscribing you get access to the members-only Discord channel, where D.E.V.I's setups are posted as they confirm. That can be a few in a week or none: it only trades when every gate passes. Each signal carries entry, stop, target, risk-reward and the reasoning, plus instructions on how to follow it.</p></div>
                         </div>
                     </div>
                     <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>Do I need trading experience to join?</h3>
-                            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Not at all! Our Kickstart Portfolio plan is perfect for beginners, and we provide step-by-step guidance for all members regardless of experience level.</p>
+                        <h3><button class="faq-question" type="button" id="faq-2-btn" aria-expanded="false" aria-controls="faq-2">Do I need trading experience to join?<span class="toggle-icon" aria-hidden="true"><i class="fas fa-plus"></i></span></button></h3>
+                        <div class="faq-answer" id="faq-2" role="region" aria-labelledby="faq-2-btn">
+                            <div><p>Not at all. Every D.E.V.I signal includes the setup type and the reasoning behind it, so you learn the structure as you trade, and the community is there for questions at any experience level.</p></div>
                         </div>
                     </div>
                     <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>How can I cancel my subscription?</h3>
-                            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>You can easily manage or cancel your subscription anytime through our Subscription Portal. There are no long-term commitments or cancellation fees.</p>
+                        <h3><button class="faq-question" type="button" id="faq-3-btn" aria-expanded="false" aria-controls="faq-3">How can I cancel my subscription?<span class="toggle-icon" aria-hidden="true"><i class="fas fa-plus"></i></span></button></h3>
+                        <div class="faq-answer" id="faq-3" role="region" aria-labelledby="faq-3-btn">
+                            <div><p>You can manage or cancel your subscription anytime through the Client Portal. There are no long-term commitments or cancellation fees.</p></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Call to Action Section -->
-        <section id="cta" class="scroll-animate">
+        <!-- CTA -->
+        <section id="cta" class="cta-band reveal" aria-labelledby="cta-title">
             <div class="cta-container">
-                <h2>Ready to Start Your Trading Journey?</h2>
-                <p>Join Divine Earnings today and take the first step toward financial independence</p>
+                <h2 id="cta-title">Start with Signals today, or wait for automation.</h2>
+                <p>D.E.V.I Signals is live at €50 a month. Standard and Pro open to the waitlist first.</p>
                 <div class="cta-buttons">
-                    <a href="#membership-options" class="btn btn-primary">Choose Your Plan</a>
-                    <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+                    <a href="https://buy.stripe.com/9AQaGX8Fdf4O68U28a" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Subscribe to Signals</a>
+                    <a href="devi.html#waitlist" class="btn btn-secondary">Join the waitlist</a>
                 </div>
             </div>
         </section>
-    </main>
 
-    <!-- Contact Section -->
-    <section id="contact" class="scroll-animate">
-        <div class="section-container">
-            <h2>Connect With Us</h2>
-            <p>Stay in touch with Divine Earnings on social media or chat directly with our team</p>
-            
-            <div class="contact-options">
+        <!-- Connect -->
+        <section id="contact" class="reveal" aria-labelledby="connect-title">
+            <div class="section-container">
+                <div class="section-head section-head--center">
+                    <h2 id="connect-title">Connect with us</h2>
+                    <p class="section-intro">Stay in touch with Divine Earnings on social media or chat directly with our team.</p>
+                </div>
                 <div class="social-icons">
                     <a href="https://www.instagram.com/divine.earnings" target="_blank" rel="noopener noreferrer" class="social-icon">
-                        <i class="fab fa-instagram"></i>
-                        <span>Instagram</span>
+                        <i class="fab fa-instagram" aria-hidden="true"></i><span>Instagram</span>
                     </a>
                     <a href="https://discord.gg/YpCPreg4Xb" target="_blank" rel="noopener noreferrer" class="social-icon">
-                        <i class="fab fa-discord"></i>
-                        <span>Discord</span>
+                        <i class="fab fa-discord" aria-hidden="true"></i><span>Discord</span>
+                    </a>
+                    <a href="https://www.linkedin.com/company/108361040/" target="_blank" rel="noopener noreferrer" class="social-icon">
+                        <i class="fab fa-linkedin" aria-hidden="true"></i><span>LinkedIn</span>
                     </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- D.E.V.I CTA Strip -->
-    <section class="devi-cta-strip reveal" aria-label="D.E.V.I promo">
-        <canvas id="devi-lightning-bg" aria-hidden="true"></canvas>
-        <div class="strip-inner">
-            <p><strong>D.E.V.I</strong> powers our smartest signals.</p>
-            <a href="devi.html" class="btn-devi-cta btn-devi-cta--small">
-                Explore D.E.V.I
-            </a>
-        </div>
-    </section>
+        <!-- D.E.V.I strip -->
+    </main>
 
-    <!-- Footer Section -->
     <footer>
         <div class="footer-container">
             <div class="footer-columns">
                 <div class="footer-column">
                     <h3>Divine Earnings</h3>
-                    <p>Empowering traders to achieve financial independence through education and community.</p>
+                    <p>Structure-based trading, taught and automated.</p>
+                    <ul class="footer-social" aria-label="Social links">
+                        <li><a href="https://www.instagram.com/divine.earnings" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                        <li><a href="https://discord.gg/YpCPreg4Xb" target="_blank" rel="noopener noreferrer" aria-label="Discord"><i class="fab fa-discord" aria-hidden="true"></i></a></li>
+                        <li><a href="https://www.linkedin.com/company/108361040/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
+                    </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Quick Links</h3>
+                    <h3>Explore</h3>
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="memberships.html">Memberships</a></li>
+                        <li><a href="devi.html">D.E.V.I</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Legal</h3>
                     <ul>
-                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="terms.html">Terms &amp; Conditions</a></li>
                         <li><a href="privacy.html">Privacy Policy</a></li>
                         <li><a href="disclaimer.html">Risk Disclaimer</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Divine Earnings. All Rights Reserved.</p>
+                <p>&copy; 2026 Divine Earnings. All rights reserved.</p>
+                <p class="footer-disclaimer">Trading involves risk. Past performance is not indicative of future results.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <a href="#" id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
+    <a href="#top-header" id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up" aria-hidden="true"></i></a>
 
-    <!-- Scripts -->
-    <script src="scripts.js"></script>
-    <script src="assets/js/animations/devi_lightning_blobs.js"></script>
+    <script src="scripts.js" defer></script>
 </body>
 </html>

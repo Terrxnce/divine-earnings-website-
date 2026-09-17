@@ -1,0 +1,498 @@
+/* ==========================================================================
+   D.E.V.I product page — dark surface variant of the site system.
+   Depends on tokens in style.css.
+   ========================================================================== */
+
+.devi-page {
+    background: var(--dark);
+    color: var(--dark-text);
+}
+
+.devi-page h1,
+.devi-page h2,
+.devi-page h3 {
+    color: #fff;
+}
+
+.devi-page .section-intro {
+    color: var(--dark-muted);
+}
+
+/* Hero
+   -------------------------------------------------------------------------- */
+.devi-hero {
+    position: relative;
+    padding: clamp(3rem, 7vw, 6rem) 0;
+    overflow: hidden;
+    background: var(--dark);
+}
+
+.devi-hero::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -15%;
+    width: 60%;
+    height: 160%;
+    background: radial-gradient(closest-side, rgba(111, 99, 231, 0.2), transparent);
+    pointer-events: none;
+}
+
+.devi-hero-container {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: center;
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+}
+
+.devi-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 4px;
+    border: 1px solid var(--purple-line);
+    background: var(--purple-dim);
+    color: var(--purple-soft);
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.devi-status::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--purple);
+    box-shadow: 0 0 0 3px rgba(111, 99, 231, 0.25);
+}
+
+.devi-title {
+    font-size: clamp(3.5rem, 9vw, 6rem);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    margin-bottom: 0.6rem;
+}
+
+.devi-subtitle {
+    font-size: clamp(1.15rem, 2vw, 1.45rem);
+    font-weight: 600;
+    color: var(--purple-soft);
+    margin-bottom: 1.25rem;
+}
+
+.devi-tagline {
+    max-width: 46ch;
+    font-size: 1.15rem;
+    color: var(--dark-text);
+    margin-bottom: 1.75rem;
+}
+
+.devi-cta-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.devi-cta-group .btn {
+    min-width: 240px;
+    min-height: 54px;
+}
+
+.devi-cta-disclaimer {
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--dark-muted);
+}
+
+.devi-meta {
+    margin-top: 2rem;
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.01em;
+    color: var(--text-3);
+}
+
+/* Entry gate stack panel
+   -------------------------------------------------------------------------- */
+.gate-panel {
+    animation: gateReveal 0.9s var(--ease-out) 0.15s both;
+    box-shadow: 0 40px 80px -40px rgba(0, 0, 0, 0.9);
+}
+
+@keyframes gateReveal {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.gates li {
+    display: grid;
+    grid-template-columns: 28px 150px 1fr;
+    gap: 0 0.75rem;
+    align-items: baseline;
+    padding: 0.55rem 1.1rem;
+    border-top: 1px solid var(--line);
+}
+
+.gates li:first-child {
+    border-top: 0;
+}
+
+.gates__n {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--purple-soft);
+}
+
+.gates__name {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.gates__rule {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    line-height: 1.4;
+    color: var(--text-2);
+}
+
+.gates__foot {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.35rem 1rem;
+    padding: 0.7rem 1.1rem;
+    border-top: 1px solid var(--line);
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--text-3);
+}
+
+.gates__foot strong {
+    color: var(--amber);
+    font-weight: 600;
+}
+
+/* Sections
+   -------------------------------------------------------------------------- */
+.devi-section {
+    padding: var(--section-y) 0;
+    background: var(--dark);
+}
+
+.devi-section {
+    border-top: 1px solid var(--line);
+}
+
+.devi-section--alt {
+    background: var(--surface);
+}
+
+.devi-container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+}
+
+.devi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+.devi-card {
+    padding: 1.75rem;
+    border-radius: var(--r-lg);
+    background: var(--dark-2);
+    border: 1px solid var(--dark-line);
+    transition: border-color 0.2s;
+}
+
+.devi-section--alt .devi-card {
+    background: var(--dark-3);
+}
+
+.devi-card:hover {
+    border-color: rgba(111, 99, 231, 0.55);
+}
+
+.devi-card h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 1rem;
+    font-size: 1.15rem;
+}
+
+.devi-card h3 i {
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: rgba(111, 99, 231, 0.16);
+    color: var(--purple-soft);
+    font-size: 0.95rem;
+}
+
+.devi-card p {
+    color: var(--dark-muted);
+}
+
+.devi-feature-list li {
+    position: relative;
+    padding-left: 1.25rem;
+    margin-bottom: 0.6rem;
+    color: var(--dark-muted);
+}
+
+.devi-feature-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.75em;
+    width: 8px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--purple);
+}
+
+/* Roadmap
+   -------------------------------------------------------------------------- */
+.roadmap {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.roadmap::before {
+    content: '';
+    position: absolute;
+    top: 22px;
+    left: 12.5%;
+    right: 12.5%;
+    height: 2px;
+    background: var(--dark-line);
+}
+
+.roadmap-step {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.9rem;
+    text-align: center;
+}
+
+.roadmap-step__dot {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px solid rgba(111, 99, 231, 0.5);
+    background: var(--dark);
+    color: var(--purple-soft);
+    font-weight: 800;
+    font-size: 0.95rem;
+}
+
+.roadmap-step.active .roadmap-step__dot {
+    background: var(--purple);
+    border-color: var(--purple);
+    color: #fff;
+    box-shadow: 0 0 0 4px var(--purple-dim);
+}
+
+.roadmap-step.done .roadmap-step__dot {
+    border-color: var(--purple-line);
+    background: var(--purple-dim);
+    color: var(--purple-soft);
+}
+
+.roadmap-step.done .roadmap-label {
+    color: var(--text-2);
+}
+
+.roadmap-label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--dark-muted);
+}
+
+.roadmap-step.active .roadmap-label {
+    color: #fff;
+}
+
+.roadmap-note {
+    max-width: 56ch;
+    margin: 2.5rem auto 0;
+    text-align: center;
+    color: var(--dark-muted);
+}
+
+/* Waitlist form
+   -------------------------------------------------------------------------- */
+.waitlist-form {
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: var(--r-lg);
+    background: var(--dark-2);
+    border: 1px solid var(--dark-line);
+}
+
+.form-field {
+    margin-bottom: 1.15rem;
+}
+
+.form-field label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-size: 0.925rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.form-field input,
+.form-field textarea {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border-radius: var(--r-sm);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: var(--dark);
+    color: #fff;
+    font: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-field textarea {
+    resize: vertical;
+    min-height: 96px;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+    color: rgba(185, 185, 214, 0.6);
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+    outline: none;
+    border-color: var(--purple);
+    box-shadow: 0 0 0 3px rgba(111, 99, 231, 0.3);
+}
+
+.submit-btn {
+    width: 100%;
+}
+
+.submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.form-status {
+    margin-top: 1rem;
+    padding: 0.85rem 1rem;
+    border-radius: var(--r-sm);
+    border: 1px solid var(--dark-line);
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--dark-muted);
+}
+
+.form-status.success {
+    background: rgba(74, 222, 128, 0.12);
+    border-color: rgba(74, 222, 128, 0.35);
+    color: #A7F3C4;
+}
+
+.form-status.error {
+    background: rgba(248, 113, 113, 0.12);
+    border-color: rgba(248, 113, 113, 0.35);
+    color: #FECACA;
+}
+
+.privacy-note {
+    max-width: 52ch;
+    margin: 1rem auto 0;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--dark-muted);
+}
+
+/* Responsive
+   -------------------------------------------------------------------------- */
+@media (max-width: 960px) {
+    .devi-hero-container {
+        grid-template-columns: 1fr;
+    }
+
+    .gate-panel {
+        max-width: 560px;
+    }
+
+    .gates li {
+        grid-template-columns: 28px 1fr;
+    }
+
+    .gates__rule {
+        grid-column: 2;
+    }
+
+    .devi-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .roadmap {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .roadmap::before {
+        top: 22px;
+        bottom: 22px;
+        left: 21px;
+        right: auto;
+        width: 2px;
+        height: auto;
+    }
+
+    .roadmap-step {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .devi-cta-group .btn {
+        width: 100%;
+    }
+
+    .waitlist-form {
+        padding: 1.5rem 1.25rem;
+    }
+}

@@ -3,220 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Divine Earnings - Trading & Investment Education</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./assets/css/components/devi_banner.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>About Us | Divine Earnings</title>
+    <meta name="description" content="Learn about Divine Earnings' mission to empower traders through structure-based signals, education, and community.">
+    <meta name="theme-color" content="#0A0A0F">
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-    <meta name="description" content="Learn about Divine Earnings' mission to empower traders with education, signals, and community support for financial independence.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header with Fixed Navigation -->
     <header id="top-header">
         <div class="header-container">
-            <div class="logo">
-                <img src="images/Logo.png" alt="Divine Earnings Logo">
-            </div>
-            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
-                <span></span>
-                <span></span>
-                <span></span>
+            <a href="index.html" class="logo" aria-label="Divine Earnings home">
+                <img src="images/logo-mark.png" alt="" width="256" height="256">
+                <span class="wordmark">Divine Earnings</span>
+            </a>
+            <button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-navigation">
+                <span></span><span></span><span></span>
             </button>
-            <nav id="main-navigation">
+            <nav id="main-navigation" aria-label="Main navigation">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="about.html" class="active" aria-current="page">About Us</a></li>
                     <li><a href="memberships.html">Memberships</a></li>
                     <li><a href="devi.html">D.E.V.I</a></li>
                     <li><a href="contact.html">Contact</a></li>
-
                     <li><a href="https://billing.stripe.com/p/login/dR65lDf1Dgqu4y4bII" target="_blank" rel="noopener noreferrer" class="nav-button">Client Portal</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main style="padding-top: 6rem;">
-        <!-- About Hero Section -->
-        <section id="about-hero" class="scroll-animate hero-style">
-            <canvas id="about-hero-canvas" class="hero-background"></canvas>
-            <div class="hero-overlay"></div>
+    <main>
+        <section id="about-hero" class="hero-style" aria-labelledby="about-title">
+            <canvas id="about-hero-canvas" class="hero-background" aria-hidden="true"></canvas>
+            <div class="hero-overlay" aria-hidden="true"></div>
             <div class="section-container">
-                <h1>About Divine Earnings</h1>
+                <h1 id="about-title">About Divine Earnings</h1>
                 <p class="section-intro">Empowering traders worldwide with knowledge, signals, and community support guided by wisdom and integrity.</p>
             </div>
         </section>
 
-        <!-- Our Story Section -->
-        <section id="our-story" class="scroll-animate">
+        <section id="our-story" class="reveal" aria-labelledby="story-title">
             <div class="section-container">
                 <div class="two-column">
                     <div class="content-column">
-                        <h2>Our Story</h2>
-                        <p class="highlight">
-                            Divine Earnings was founded on the belief that financial independence should be accessible to everyone, regardless of their background or experience level.
-                        </p>
-                        <p>
-                            Guided by the wisdom of James 1:5 - "If any of you lacks wisdom, you should ask God, who gives generously to all without finding fault, and it will be given to you" - we believe that with the right knowledge, guidance, and support, anyone can achieve their financial goals.
-                        </p>
-                        <p>
-                            Our journey began when our founder recognized the gap between successful traders and those struggling to find consistent profits. We realized that most people had access to the same markets and tools, but lacked the proper education, signals, and community support needed to succeed.
-                        </p>
+                        <h2 id="story-title">Our story</h2>
+                        <p class="highlight">Divine Earnings was founded on the belief that financial independence should be accessible to everyone, regardless of their background or experience level.</p>
+                        <p>Guided by the wisdom of James 1:5 — "If any of you lacks wisdom, you should ask God, who gives generously to all without finding fault, and it will be given to you" — we believe that with the right knowledge, guidance, and support, anyone can achieve their financial goals.</p>
+                        <p>Our journey began when our founder recognized the gap between successful traders and those struggling to find consistent profits. We realized that most people had access to the same markets and tools, but lacked the proper education, signals, and community support needed to succeed.</p>
                     </div>
                     <div class="image-column">
                         <div class="image-container">
-                            <img src="images/Logo.png" alt="Divine Earnings Logo">
+                            <img src="images/logo-mark.png" alt="Divine Earnings logo" width="256" height="256" loading="lazy">
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Our Mission Section -->
-        <section id="our-mission" class="scroll-animate">
+        <section id="our-mission" class="band-alt reveal" aria-labelledby="mission-title">
             <div class="section-container">
-                <h2>Our Mission</h2>
-                <div class="mission-cards">
-                    <div class="mission-card">
-                        <div class="icon-container">
-                            <i class="fas fa-lightbulb"></i>
-                        </div>
+                <div class="section-head section-head--center">
+                    <h2 id="mission-title">Our mission</h2>
+                </div>
+                <div class="pillars">
+                    <div class="pillar">
+                        <div class="icon-container" aria-hidden="true"><i class="fas fa-lightbulb"></i></div>
                         <h3>Educate</h3>
                         <p>Provide comprehensive trading education that transforms beginners into confident, knowledgeable traders.</p>
                     </div>
-                    <div class="mission-card">
-                        <div class="icon-container">
-                            <i class="fas fa-signal"></i>
-                        </div>
+                    <div class="pillar">
+                        <div class="icon-container" aria-hidden="true"><i class="fas fa-signal"></i></div>
                         <h3>Guide</h3>
                         <p>Deliver high-quality trading signals and analysis to help our members make informed trading decisions.</p>
                     </div>
-                    <div class="mission-card">
-                        <div class="icon-container">
-                            <i class="fas fa-hands-helping"></i>
-                        </div>
+                    <div class="pillar">
+                        <div class="icon-container" aria-hidden="true"><i class="fas fa-hands-helping"></i></div>
                         <h3>Support</h3>
-                        <p>Foster a supportive community where traders can learn, grow, and achieve financial independence together.</p>
+                        <p>Foster a supportive community where traders learn and grow together.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Our Values Section -->
-        <section id="our-values" class="scroll-animate">
+        <section id="our-values" class="reveal" aria-labelledby="values-title">
             <div class="section-container">
-                <h2>Our Core Values</h2>
+                <div class="section-head">
+                    <h2 id="values-title">Our core values</h2>
+                </div>
                 <div class="values-grid">
                     <div class="value-item">
-                        <h3><i class="fas fa-heart"></i> Integrity</h3>
+                        <h3><i class="fas fa-heart" aria-hidden="true"></i>Integrity</h3>
                         <p>We operate with complete transparency and honesty in all our communications and trading signals.</p>
                     </div>
                     <div class="value-item">
-                        <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                        <h3><i class="fas fa-graduation-cap" aria-hidden="true"></i>Education</h3>
                         <p>We believe knowledge is the foundation of successful trading and continuous learning is essential.</p>
                     </div>
                     <div class="value-item">
-                        <h3><i class="fas fa-users"></i> Community</h3>
+                        <h3><i class="fas fa-users" aria-hidden="true"></i>Community</h3>
                         <p>We foster a supportive environment where traders help each other grow and succeed.</p>
                     </div>
                     <div class="value-item">
-                        <h3><i class="fas fa-chart-line"></i> Excellence</h3>
+                        <h3><i class="fas fa-chart-line" aria-hidden="true"></i>Excellence</h3>
                         <p>We strive for excellence in everything we do, from signal quality to customer service.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- What Sets Us Apart Section -->
-        <section id="what-sets-us-apart" class="scroll-animate">
-            <div class="section-container">
-                <h2>What Sets Us Apart</h2>
-                <div class="apart-features">
-                    <div class="apart-feature">
-                        <div class="feature-number">01</div>
-                        <h3>Proven Track Record</h3>
-                        <p>Our signals have consistently delivered results for our members, with transparent performance reporting.</p>
-                    </div>
-                    <div class="apart-feature">
-                        <div class="feature-number">02</div>
-                        <h3>Comprehensive Education</h3>
-                        <p>We don't just give signals - we teach you the 'why' behind each trade to develop your skills.</p>
-                    </div>
-                    <div class="apart-feature">
-                        <div class="feature-number">03</div>
-                        <h3>Personal Mentorship</h3>
-                        <p>Direct access to experienced traders through mentorship calls and premium chat groups.</p>
-                    </div>
-                    <div class="apart-feature">
-                        <div class="feature-number">04</div>
-                        <h3>Multi-Asset Approach</h3>
-                        <p>Coverage across forex, stocks, and crypto markets to diversify your trading opportunities.</p>
-                    </div>
+
+        <section id="about-cta" class="cta-band reveal" aria-labelledby="about-cta-title">
+            <div class="cta-container">
+                <h2 id="about-cta-title">Follow the build.</h2>
+                <p>Watch D.E.V.I being proven in the open, or start with Signals today.</p>
+                <div class="cta-buttons">
+                    <a href="devi.html" class="btn btn-primary">Explore D.E.V.I</a>
+                    <a href="memberships.html" class="btn btn-secondary">View Memberships</a>
                 </div>
             </div>
         </section>
 
-        <!-- CTA Section -->
-        <section id="about-cta" class="scroll-animate">
-            <div class="cta-container">
-                <h2>Ready to Join Our Community?</h2>
-                <p>Start your journey toward financial independence with Divine Earnings today</p>
-                <div class="cta-buttons">
-                    <a href="memberships.html" class="btn btn-primary">View Memberships</a>
-                    <a href="contact.html" class="btn btn-secondary">Contact Us</a>
-                </div>
-            </div>
-        </section>
     </main>
 
-    <!-- D.E.V.I CTA Strip -->
-    <section class="devi-cta-strip reveal" aria-label="D.E.V.I promo">
-        <canvas id="devi-lightning-bg" aria-hidden="true"></canvas>
-        <div class="strip-inner">
-            <p><strong>D.E.V.I</strong> powers our smartest signals.</p>
-            <a href="devi.html" class="btn-devi-cta btn-devi-cta--small">
-                Explore D.E.V.I
-            </a>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer>
         <div class="footer-container">
             <div class="footer-columns">
                 <div class="footer-column">
                     <h3>Divine Earnings</h3>
-                    <p>Empowering traders to achieve financial independence through education and community.</p>
+                    <p>Structure-based trading, taught and automated.</p>
+                    <ul class="footer-social" aria-label="Social links">
+                        <li><a href="https://www.instagram.com/divine.earnings" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                        <li><a href="https://discord.gg/YpCPreg4Xb" target="_blank" rel="noopener noreferrer" aria-label="Discord"><i class="fab fa-discord" aria-hidden="true"></i></a></li>
+                        <li><a href="https://www.linkedin.com/company/108361040/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
+                    </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Quick Links</h3>
+                    <h3>Explore</h3>
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="memberships.html">Memberships</a></li>
+                        <li><a href="devi.html">D.E.V.I</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Legal</h3>
                     <ul>
-                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="terms.html">Terms &amp; Conditions</a></li>
                         <li><a href="privacy.html">Privacy Policy</a></li>
                         <li><a href="disclaimer.html">Risk Disclaimer</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Divine Earnings. All Rights Reserved.</p>
+                <p>&copy; 2026 Divine Earnings. All rights reserved.</p>
+                <p class="footer-disclaimer">Trading involves risk. Past performance is not indicative of future results.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <a href="#" id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
+    <a href="#top-header" id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up" aria-hidden="true"></i></a>
 
-    <script src="scripts.js"></script>
-    <script src="assets/js/animations/devi_lightning_blobs.js"></script>
+    <script src="scripts.js" defer></script>
 </body>
 </html>

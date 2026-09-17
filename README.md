@@ -55,8 +55,8 @@ Website2/
 ├── style.css                     # Main stylesheet
 ├── scripts.js                    # Core JavaScript
 ├── assets/
-│   ├── css/components/
-│   │   └── devi_banner.css       # D.E.V.I banner styles
+│   ├── css/
+│   │   └── devi.css              # D.E.V.I page styles
 │   ├── js/animations/
 │   │   └── devi_lightning_blobs.js # Lightning animation
 │   └── images/fallbacks/
